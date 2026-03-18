@@ -1,0 +1,84 @@
+\chapter{Introducción}
+\section{Motivacion}
+\subsection{Situación de la PYMES}
+Durante un largo periodo de tiempo he podido comprobar como la deuda tecnológica de las empresas pequeñas en ciudades y pueblos aumenta cada vez más, comprobando esto con los estudios de \cite{DESI2026} y los informes de digitalización nacional \cite{SEDIA2026}. A causa de esta deuda, se puede ver un uso ineficiente de herramientas, como hojas de Excel, para tareas que requieren una estructura de datos más robusta, propia de las bases de datos. Esta falta de digitalización provoca procesos repetitivos, silos de información que no estaban conectados entre ellos y una dependencia muy alta de llamadas, tanto telefónicas como por teams por no contar con un programa de autogestión. Esta realidad no solo genera una ineficiencia operativa, sino que provoca un aumento de carga de trabajo innecesaria y un aumento en los niveles de estrés del personal.
+\subsection{Primeras ideas}
+Al vivir día a día la situación anterior, siempre se me venía alguna idea a la cabeza de cómo se podrían solucionar estos problemas, veía patrones a la hora de hacer alguna tarea ineficiente que me hacían pensar formas de solucionar errores. Además, conforme estaba cursando la carrera, iba aprendiendo a como analizar procesos y a desarrollar software. Cada año avanzaba en la carrera pensaba una forma distinta de mejorar el proceso. 
+\subsubsection{Primera Solucion}
+Tras terminar el primer año pensé en migrar los datos de los diferentes proyectos a una base de datos en Access ¿Porque Access? al ser una aplicación de Microsoft 365 tiene una compatibilidad muy alta con Excel. En la \ref{fig:motivacion_Idea1} podemos ver un resumen de en que consistiría el proyecto. El problema fue que como he comentado anteriormente, había una diferencia muy grande entre los tipos de datos, como por ejemplo que en cada Excel la fecha se escriba de una forma, o que existan campos en algunas hojas que no vuelvan a aparecer en otras, por lo que habría que tomar una decisión importante en el diseño de la base de datos que se repetiría varias veces con distintos campos. Por lo tanto, al ver que la complejidad del proceso era cada vez mayor, decidí abandonar esta idea.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/Primera_Idea.jpg}
+    \caption{Ilustración conceptual de la primera solución propuesta.}
+    \label{fig:motivacion_Idea1}
+\end{figure}
+\subsubsection{Segunda Solucion} 
+Después del fracaso del pensamiento anterior, pensé en hacer un programa básico en Python que permitiese manejar varios procesos, es decir, una aplicación en miniatura, solo implementando el back y unas ayudas para que un usuario que no esté especializado pueda usarlo. Estas acciones irían desde un análisis de billetes de avión para ver cuál es más barato, para después poder comprar el seleccionado usando jsons con la información de los empleados que vayan a embarcar. En la \ref{fig:motivacion_Idea2} podemos ver un resumen de en que consistiría el proyecto.  
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/Segunda_Idea.jpg}
+    \caption{Ilustración conceptual de la segunda solución propuesta.}
+    \label{fig:motivacion_Idea2}
+\end{figure} 
+Sin embargo, al igual que en el intento anterior cuanto más avanzaba con la idea, más contras salían, por decir algunas puedo nombrar la cantidad de llamadas que tendría que hacer a APIS de las páginas de las compañías de vuelos, junto con el mantenimiento masivo que tendría que hacer al intentar robotizar los formularios de los billetes de los aviones, esto debido a que los elementos html de estas webs son dinámicos.
+\subsubsection{Conclusión}
+Tras analizar las dos ideas, pensar como poder implementarlas juntas, analizando que pros y que contras tienen, todo esto con el fin de crear un producto con la mayor calidad posible. Pero tras darle un par de vueltas pensé en descartar las dos ideas y empezar algo nuevo, en vez de programar un programa básico en Python o unificar todos los datos. Porque no enfrentar primero cada problema por separado, primero, solucionar los procesos repetitivos a través de automatizaciones, como rellenar hojas de cálculo con un solo fichero de entrada, después ir construyendo una aplicación que contenga funciones más complejas como tableros Kanban para mejorar la autogestión entre otras, planings semanales para cada persona, sistema de fichado, entre otros. En la \ref{fig:motivacion_Idea3} podemos ver un prototipo de la idea.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/Conclusion_Idea.jpg}
+    \caption{Ilustración conceptual de la idea del TFG.}
+    \label{fig:motivacion_Idea3}
+\end{figure}
+
+\section{Objetivos}
+
+El objetivo principal de este Trabajo de Fin de Grado es el diseño e implementación de una plataforma de software centralizada que integre un motor de automatización de flujos de trabajo y herramientas de gestión visual. En particular, se pretende desarrollar una solución que permita a las pequeñas y medianas empresas (pymes) optimizar sus procesos operativos repetitivos mediante n8n, a la vez que se facilita la autogestión de tareas y recursos a través de un tablero Kanban y un sistema de planificación integrados.
+
+El cumplimiento del objetivo principal se articula a través de los siguientes objetivos específicos:
+
+\begin{itemize}
+    \item[\textbf{OBJ-1}] \textbf{Estudio del contexto y análisis de requisitos:} Realizar un estudio sobre la deuda tecnológica en las pymes de ámbito local, identificando los procesos manuales más críticos y analizando aplicaciones de automatización e integración existentes en el mercado.
+    
+    \item[\textbf{OBJ-2}] \textbf{Análisis y selección de tecnologías:} Evaluar y seleccionar las tecnologías más adecuadas para la implementación de una arquitectura robusta, considerando el uso de motores de automatización \textit{fair-code} (n8n), bases de datos relacionales y entornos de desarrollo \textit{full-stack} basados en JavaScript/TypeScript.
+    
+    \item[\textbf{OBJ-3}] \textbf{Adopción de una metodología ágil:} Aplicar un enfoque de desarrollo ágil basado en iteraciones (\textit{sprints}) que permita la gestión del cambio y la incorporación progresiva de funcionalidades de automatización y gestión. Se usará como base la metodología SCRUM \cite{ScrumGuide2020}, adaptándola a las necesidades específicas del proyecto, con el fin de permitir una gestión eficiente del proyecto a la hora de realizar cambios \cite{Fowler2004}
+    
+    \item[\textbf{OBJ-4}] \textbf{Implementación de la solución integral:} Desarrollar el prototipo funcional aplicando prácticas sólidas de Ingeniería del Software (patrones de diseño, modularidad y APIs REST) para garantizar un sistema eficiente, escalable y de alta calidad.
+    
+    \item[\textbf{OBJ-5}] \textbf{Evaluación y validación de la calidad:} Realizar pruebas de integración entre la aplicación centralizada y el motor de automatización para asegurar la integridad de los datos y la correcta ejecución de los flujos de trabajo diseñados.
+\end{itemize}
+
+\section{Competencias de la Intensificación}
+
+Las competencias de la intensificación de Ingeniería del Software que se pretenden cubrir en este Trabajo de Fin de Grado son las siguientes:
+
+\begin{itemize}
+    \item[\textbf{IS-1}] \textbf{Capacidad para desarrollar, mantener y evaluar servicios y sistemas software} que satisfagan todos los requisitos del usuario y se comporten de forma fiable y eficiente, sean asequibles de desarrollar y mantener y cumplan normas de calidad, aplicando las teorías, principios, métodos y prácticas de la Ingeniería del Software.
+    
+    \item[\textbf{IS-3}] \textbf{Capacidad de dar solución a problemas de integración} en función de las estrategias y tecnologías disponibles.
+    
+    \item[\textbf{IS-4}] \textbf{Capacidad de identificar y analizar problemas y diseñar, desarrollar, implementar, verificar y documentar soluciones software} sobre la base de un conocimiento adecuado de las teorías, modelos y técnicas actuales.
+    
+    \item[\textbf{IS-5}] \textbf{Capacidad de identificar, evaluar y gestionar los riesgos potenciales asociados} que pudieran presentarse durante el ciclo de vida del desarrollo.
+\end{itemize}
+\newpage
+\section{Estructura del Proyecto}
+
+En este apartado se expone la organización que seguirá el presente Trabajo de Fin de Grado, proporcionando una breve descripción del contenido de cada uno de los capítulos que componen la memoria.
+
+\begin{itemize}
+    \item \textbf{Capítulo 1. Introducción, motivación y objetivos:} Se introduce el contexto del trabajo y se explica el porqué de su realización. Asimismo, se definen el objetivo principal y los objetivos secundarios, finalizando con la descripción de las competencias de la intensificación que se pretenden cubrir.
+    
+    \item \textbf{Capítulo 2. Antecedentes:} Se detalla el contexto del trabajo planteando un enfoque que va desde lo más general a lo particular. En este bloque se profundiza en la tecnología relevante para el sector y se realiza un estudio de aplicaciones similares existentes en el mercado.
+    
+    \item \textbf{Capítulo 3. Propuesta de Solución, Metodología y Herramientas:} Se plantea formalmente la idea antes de su desarrollo y se define la metodología de trabajo a seguir. Además, se enumeran las herramientas utilizadas para la gestión, documentación y desarrollo del software.
+    
+    \item \textbf{Capítulo 4. Descripción de la Aplicación:} Constituye el núcleo técnico del trabajo, donde se detallan los requisitos del sistema y la arquitectura diseñada. Incluye un resumen del proceso de desarrollo y la descripción funcional de la aplicación resultante.
+    
+    \item \textbf{Capítulo 5. Evaluación:} Se describe el proceso de validación del sistema a través de diferentes niveles, como la usabilidad y la satisfacción del usuario. Se exponen los resultados obtenidos y su correspondiente discusión.
+    
+    \item \textbf{Capítulo 6. Conclusiones y Trabajo Futuro:} Se resume el grado de cumplimiento de los objetivos y competencias planteados inicialmente. Para finalizar, se proponen ideas clave para la evolución futura del proyecto.
+\end{itemize}
+
+Complementariamente, la memoria incluye un apartado de \textbf{Bibliografía} con todas las referencias utilizadas y una serie de \textbf{Anexos} destinados a detallar el desarrollo del proyecto por sprints y a facilitar material adicional como el acceso a repositorios o prototipos.
+

@@ -1,0 +1,94 @@
+\chapter{Antecedentes}
+En este capítulo se presenta el contexto de las pequeñas empresas del sector de la construcción y las instalaciones de climatización. Se realizará una investigación que partira desde lo más general de la obra pública y la estructura de las PYMES del sector, hasta llegar al análisis de los procesos de gestión internos que presentan mayores ineficiencias. Asimismo, se examinará el estado actual de la tecnología en el sector, identificando las limitaciones de las herramientas tradicionales y evaluando las soluciones actuales.
+\section{Ámbito de la Construcción}
+El sector de la construcción e instalaciones en España es un entorno altamente regulado, donde la carga administrativa suele superar la capacidad técnica de las pequeñas empresas. En esta sección se analizarán los mecanismos de licitación pública y los requisitos específicos de seguridad que condicionan la operativa diaria en infraestructuras críticas, basándose en el marco normativo vigente \cite{SEDIA2026}. Se hablara más especificamente de las empresas que operan en el ambito aeroportuario, que es el caso de la empresa objeto de estudio.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/construccion_aeropuerto.jpg}
+    \caption{Obras de expansión en infraestructura aeroportuaria. Fuente: Olaf Tausch vía Wikimedia Commons (Licencia CC BY-SA 3.0).}
+    \label{fig:construccion_aeropuerto}
+\end{figure}
+\subsection{Marco administrativo y licitación pública}
+Las empresas que operan en el sector público deben participar en procesos de \bft{licitación} publicados por diversos organismos (Ayuntamientos, Ministerios, entes públicos, etc.). El canal principal para este fin es la \textit{Plataforma de Contratación del Sector Público}, donde los organismos publican sus proyectos. Estos son procesados posteriormente como un \bft{expediente} administrativo que requiere un seguimiento riguroso.
+\subsubsection{Expedientes}
+Un expediente representa un proyecto licitado por la administración. Se identifica mediante un número de referencia único y contiene información crítica: fecha de presentación, importe base de licitación, descripción técnica y un \bft{pliego}. Este último detalla las actuaciones  a realizar y los requisitos  que la empresa debe cumplir para ser considerada apta.
+\subsection{Adjudicación de licitación}
+A la hora de buscar una licitación interesante, se debe mirar el pliego para ver que actuaciones tiene, como va de precio y la fecha de presentación. Si todo lo anterior cuadra con la empresa, significa que es una licitación apta para presentarte.
+\subsubsection{Presentación}
+Las empresas interesadas acuden a sesiones informativas para ver en detalle de que va el expediente. Tras esto se debe adjuntar una extensa documentación junto con los precios que ofrece la empresa para cada actuación del pliego. La empresa que mejores condiciones aporte sera la elegida.
+\subsection{Gestiones administrativas en entornos aeroportuarios}
+Una vez adjudicada la obra, las labores en el recinto aeroportuario presentan diversas complicaciones, que se deben a las nomativas europeas \cite{UE_139_2014} las cuales fueron definidas por la Agencia Estatal de Seguridad Aérea (AESA) \cite{AESA_Web}. AESA actúa como el organismo regulador de la seguridad aérea en España, mientras que AENA ejerce como gestor, siendo los responsables del cumplimiento.
+Los técnicos deben realizar reformas, junto con instalaciones eléctricas entre las que se incluyen las instalaciones de climatización en zonas de tránsito de pasajeros o \bft{áreas restringidas} (denominadas lado aire y lado tierra). Esto implica una serie de precauciones críticas que deben ser tratadas:
+\begin{itemize}
+\item{Formación Obligatoria:} Los trabajadores deben superar programas de formación específica. El curso AVSEC les capacita en la protección contra actos de interferencia ilícita \cite{AENA_AVSEC}, mientras que el AVSAF se centra en la seguridad operacional en pista \cite{AENA_AVSAF}. Sin estas certificaciones vigentes, el trabajador tiene denegado el acceso autónomo, dependiendo de acompañamiento autorizado, lo que penaliza la productividad.
+\item{Logística de Accesos:} El transporte de materiales debe coordinarse con los horarios de baja operativa del aeropuerto, requiriendo escoltas o pases de seguridad temporales cuya gestión esta regida por reglas inflexibles, lo que provoca un retraso considerable.
+\item{Gestión de Residuos:} El desescombro y la limpieza deben ser inmediatos y bajo normativas ambientales estrictas para no afectar a la calidad del aire o la visibilidad en terminales.
+\end{itemize}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Tecnicos.jpg} 
+    \caption{Operarios coordinando tareas de mantenimiento e infraestructura. Fuente: \textit{“Discussing the work”} por Oregon Department of Transportation, utilizada bajo licencia CC BY 2.0 (\url{https://creativecommons.org/licenses/by/2.0/}).}
+    \label{fig:discusion_obra}
+\end{figure}
+\newpage
+\section{Soluciones Software del Sector}
+La digitalización en las pequeñas y medianas empresas españolas presenta una evolución irregular. Mientras que el sector público ha avanzado hacia la administración electrónica, las pymes locales tienen una deuda tecnológica significativamente grande que las lastra \cite{DESI2026, SEDIA2026}. Según el último informe del \textbf{ONTSI} \cite{ONTSI_Pymes}, esta brecha es especialmente crítica en el sector de la construcción, que se sitúa como uno de los más rezagados en la adopción de tecnologías disruptivas. A continuación, se describen las herramientas predominantes y las limitaciones que perpetúan esta situación.
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\rowcolor{gray!20} \bft{Sector de Actividad (2022)} & \bft{Total (\%)} & \bft{Total > 10 (\%)} & \bft{Total micro (\%)} \\ \hline
+Construcción & 59,9 & 75,4 & 58,7 \\ \hline
+Act. Inmobiliarias y Administrativas & 67,1 & 81,1 & 66,4 \\ \hline
+\end{tabular}
+\caption{Valor de la dimensión equipamientos e infraestructuras por tamaño de empresa. Fuente: Elaboración propia a partir de datos del ONTSI (2023).}
+\label{tab:datos_ontsi_construccion}
+\end{table}
+\subsection{Aplicaciones del sector público}
+Las plataformas de AENA y de contratación estatal han agilizado el proceso administrativo externo, pero funcionan como silos de información desconectados del software interno de las empresas. Esto obliga a procesos de volcado de datos manuales y redundantes, aumentando la probabilidad de error humano y la pérdida de integridad de la información \cite{IBMAutomation2024}.
+\subsection{Aplicaciones de gestión y administración}
+Existe una brecha clara según el tamaño de la organización. Las grandes empresas implementan sistemas ERP avanzados, mientras que las pymes suelen recurrir a herramientas heterogéneas \cite{Fowler2004}, podemos destacar las siguientes:
+\begin{itemize}
+    \item {Gestión económica y facturación:} Se recurre a software especializado como \textit{Factusol}, o el futuro \textit{Verifactu}, que suele quedar aislado del resto de procesos operativos.
+	\item {Excel:} Se abusa de las hojas de cálculo para tareas críticas como la gestión de gastos de proyectos, la elaboración de presupuestos, la planificación de tareas y la generación de certificaciones de obra.
+	\item {Comunicación:} Aunque se han adoptado herramientas adecuadas como \textit{Microsoft Teams}, la información compartida en estas no se vincula automáticamente con los cronogramas o la base de datos de la empresa.
+\end{itemize}
+Como resultado, la empresa gestiona su actividad mediante aplicaciones independientes, careciendo de una \bft{cohesión de datos} que permita una visión integral y automatizada del estado de los proyectos.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Iceberg_DebTec_Pymes.png}
+    \caption{Ilustración del iceberg de la deuda tecnológica en las pymes. Fuente: Elaboración propia basada en el concepto de iceberg de deuda técnica \cite{Fowler2004}.}
+    \label{fig:iceberg_deuda_tecnologica}
+\end{figure}
+\subsection{Automatizaciones posibles}
+La identificación de procesos repetitivos permite proponer áreas de optimización mediante técnicas de automatización y orquestación de flujos \cite{IBMAutomation2024, EmprendeAprendiendo2025}. Se destacan la sincronización automática de datos de pases aeroportuarios y la monitorización de nuevas licitaciones mediante el consumo de fuentes oficiales y APIs.
+
+\section{Tecnologías del sector}
+El desarrollo de soluciones de gestión modernas requiere el análisis de paradigmas tecnológicos actuales que permitan superar la rigidez de los sistemas tradicionales. En esta sección se evalúan las tecnologías seleccionadas para la arquitectura del proyecto basándose en su rendimiento y fiabilidad en entornos profesionales \cite{Fowler2004, NodeJS_Official}.
+
+\subsection{Arquitectura de Automatización y Datos}
+Para integrar sistemas heterogéneos y garantizar la persistencia, se han analizado las siguientes categorías:
+\begin{itemize}
+    \item \textbf{Motores de Automatización:} Se evaluó el uso de scripts aislados frente a orquestadores visuales como \textit{n8n}, seleccionando este último por su capacidad de integración vía APIs y facilidad de mantenimiento \cite{IBMAutomation2024}.
+    \item \textbf{Gestión de Bases de Datos:} Se compararon modelos NoSQL frente a Relacionales \cite{EDteamSQL, PandoraFMS_BD, MongoDB_Official}, optando por \textit{PostgreSQL} para asegurar la integridad referencial de los expedientes y certificaciones \cite{PostgreSQL_Official, TodoPostgreSQL_Ventajas}.
+\end{itemize}
+
+\subsection{Ecosistema de Desarrollo Full-Stack}
+La creación de interfaces dinámicas como tableros Kanban requiere frameworks modernos. Se analizaron opciones como Angular y Vue \cite{Angular_Official, VueJS_Official}, seleccionando \textit{React} ya que es un estandar muy usado actualmente, eficiente y además he tenido la oportunidad de trabajar con él \cite{4GeeksFrameworks, React_Official, Vid_React_Tutorial}. En el servidor, se utiliza \textit{Node.js} con \textit{Express} para gestionar la asincronía de las tareas de automatización de forma eficiente \cite{NodeJS_Official, Express_Official}. Se podría utilizar springBoot que es más solido, pero no estoy familiarizado con él, mientras que Node es más facil de implementar y tengo algo de experiencia.
+
+\section{Conclusiones de las Tecnologías}
+Tras analizar el estado actual de las pymes del sector, se concluye que la superación de la deuda tecnológica requiere abandonar el modelo de silos manuales.
+Por ultimo, gracias a una encuesta de \cite{StackOverflow2025} podemos observa cuanto usan los desarrolladores las tecnologías mencionadas.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Databases_MasUsadas.png}
+    \caption{Ilustración de las bases de datos más usadas. Fuente: \cite{StackOverflow2025}.}
+    \label{fig:iceberg_deuda_tecnologica}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Frameworks_MasUsados.png}
+    \caption{Ilustración de los frameworks más usados. Fuente: \cite{StackOverflow2025}.}
+    \label{fig:iceberg_deuda_tecnologica}
+\end{figure}

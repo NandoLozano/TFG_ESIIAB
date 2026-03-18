@@ -1,0 +1,107 @@
+\begin{thebibliography}{}
+
+\bibitem[Academy, 2024]{4GeeksFrameworks}
+Academy, G. (2024).
+\newblock Los 5 frameworks fundamentales para frontend.
+
+\bibitem[AENA, 2024a]{AENA_AVSEC}
+AENA (2024a).
+\newblock Instrucción de seguridad aeroportuaria (normativa avsec).
+
+\bibitem[AENA, 2024b]{AENA_AVSAF}
+AENA (2024b).
+\newblock Seguridad operacional en plataforma (formación avsaf).
+
+\bibitem[{Agencia Estatal de Seguridad Aérea (AESA)}, 2024]{AESA_Web}
+{Agencia Estatal de Seguridad Aérea (AESA)} (2024).
+\newblock Portal oficial de la agencia estatal de seguridad aérea.
+\newblock Organismo regulador de la seguridad aérea en España.
+
+\bibitem[Aprendiendo, 2025]{EmprendeAprendiendo2025}
+Aprendiendo, E. O.~E. (2025).
+\newblock Automatizaciones (guía definitiva 2025).
+
+\bibitem[EDteam, 2024]{EDteamSQL}
+EDteam (2024).
+\newblock 6 motores de bases de datos sql que debes conocer.
+
+\bibitem[en~Castellano, 2024]{Vid_React_Tutorial}
+en~Castellano, P. (2024).
+\newblock React: Guía completa para principiantes.
+
+\bibitem[{European Commission}, 2024]{DESI2026}
+{European Commission} (2024).
+\newblock Digital economy and society index (desi) 2024.
+
+\bibitem[Express.js, 2010]{Express_Official}
+Express.js (2010).
+\newblock Express: Fast, unopinionated, minimalist web framework for node.js.
+
+\bibitem[FMS, 2023]{PandoraFMS_BD}
+FMS, P. (2023).
+\newblock Las mejores bases de datos: Comparativa y usos.
+
+\bibitem[Foundation, 2009]{NodeJS_Official}
+Foundation, O. (2009).
+\newblock Node.js: Javascript runtime built on chrome's v8 javascript engine.
+
+\bibitem[Fowler, 2004]{Fowler2004}
+Fowler, M. (2004).
+\newblock {\em UML Distilled: A Brief Guide to the Standard Object Modeling
+  Language}.
+\newblock Addison-Wesley, 3rd edition.
+
+\bibitem[Google, 2016]{Angular_Official}
+Google (2016).
+\newblock Angular: The modern web developer's platform.
+
+\bibitem[Group, 1996]{PostgreSQL_Official}
+Group, P. G.~D. (1996).
+\newblock Postgresql: The world's most advanced open source relational
+  database.
+
+\bibitem[IBM, 2024]{IBMAutomation2024}
+IBM (2024).
+\newblock ¿qué es la automatización?
+
+\bibitem[Inc., 2009]{MongoDB_Official}
+Inc., M. (2009).
+\newblock Mongodb: The developer data platform.
+
+\bibitem[Meta~Platforms, 2013]{React_Official}
+Meta~Platforms, I. (2013).
+\newblock React: The library for web and native user interfaces.
+
+\bibitem[{Observatorio Nacional de Tecnología y Sociedad (ONTSI)},
+  2023]{ONTSI_Pymes}
+{Observatorio Nacional de Tecnología y Sociedad (ONTSI)} (2023).
+\newblock Informe de digitalización de las pymes. un análisis comparado.
+
+\bibitem[Schwaber and Sutherland, 2020]{ScrumGuide2020}
+Schwaber, K. and Sutherland, J. (2020).
+\newblock The scrum guide.
+
+\bibitem[{Secretaría de Estado de Digitalización e Inteligencia Artificial},
+  2024]{SEDIA2026}
+{Secretaría de Estado de Digitalización e Inteligencia Artificial} (2024).
+\newblock Estadísticas e informes del sector digital en españa.
+
+\bibitem[{Stack Overflow}, 2025]{StackOverflow2025}
+{Stack Overflow} (2025).
+\newblock 2025 developer survey: Web frameworks and technologies.
+
+\bibitem[TodoPostgreSQL, 2024]{TodoPostgreSQL_Ventajas}
+TodoPostgreSQL (2024).
+\newblock Ventajas y desventajas de postgresql.
+
+\bibitem[{Unión Europea}, 2014]{UE_139_2014}
+{Unión Europea} (2014).
+\newblock Reglamento (ue) nº 139/2014 por el que se establecen los requisitos
+  y procedimientos administrativos relativos a los aeródromos.
+\newblock {\em Diario Oficial de la Unión Europea}.
+
+\bibitem[You, 2014]{VueJS_Official}
+You, E. (2014).
+\newblock Vue.js: The progressive javascript framework.
+
+\end{thebibliography}

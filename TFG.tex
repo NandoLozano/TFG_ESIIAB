@@ -1,0 +1,253 @@
+% -------------------------------
+% Plantilla del TFG en la ESIIAB-UCLM. Versión 0.0 (Preliminar)
+%
+% Luis de la Ossa
+% 
+% Compilar con XeLaTeX 
+% -------------------------------
+\documentclass[12pt, a4paper]{book}
+
+% -------------------------------
+% Información y opciones del documento. Debe editarse.
+% -------------------------------
+\input{include/opciones}
+
+% -------------------------------
+% Configuración del documento, paquetes, etc. 
+% -------------------------------
+\input{include/configuracion}
+
+% Documento
+\begin{document}
+
+% -------------------------------
+% Portada y título
+% -------------------------------
+% Fuente  de la portada
+% \setmainfont[Ligatures={NoRequired,NoCommon,NoContextual}]{Calibri}
+\input{elements/portada}
+
+% -------------------------------
+% Fuente del documento.
+% -------------------------------
+% La fuente recomendada es Calibri, pero no está instalada en overleaf:
+%\setmainfont[Ligatures={NoRequired,NoCommon,NoContextual}]{Calibri}
+
+% Para utilizarla aquí, son necesarios los archivos .ttf correspondientes:
+%\setmainfont[
+%			BoldFont=Calibrib.ttf,
+%			ItalicFont=Calibrii.ttf,
+%			BoldItalicFont=Calibriz.ttf
+%		]{Calibri.ttf}
+
+% Por defecto, utiliza una fuente instalada en overleaf. 
+% Éstas son algunas que van bien con la plantilla:
+%\setmainfont{Alegreya Sans} 
+\setmainfont{Carlito}
+%\setmainfont{PT Sans}
+%\setmainfont{Source Sans Pro}
+
+% -------------------------------
+% Preámbulo
+% -------------------------------
+\frontmatter 
+\input{elements/preambulo}
+
+% -------------------------------
+% Índices y tablas
+% -------------------------------
+\tableofcontents	% Índice
+\listoffigures		% Índice de figuras
+\listoftables		% Índice de tablas
+\listofalgorithms   % Índice de algoritmos (comentar si no los hay)
+\listofcodes	    % Índice de códigos (comentar si no los hay)
+\cleardoublepage
+
+% -------------------------------
+% Documento
+% -------------------------------
+\mainmatter
+% Estilo de página
+\pagestyle{fancy}
+
+% Introducción
+\input{chapters/ch1} 
+
+% Algunos elementos
+\input{chapters/ch2} 
+
+% Utilidades para anotaciones
+\input{chapters/ch3} 
+
+% -------------------------------
+% Apéndices
+% -------------------------------
+\appendix
+\chapter{Anexo 1}
+\section{Automatizaciones}
+
+La automatización de procesos de negocio consiste en el uso de la tecnología para ejecutar tareas y flujos de trabajo recurrentes, minimizando la intervención humana. En el contexto de la Ingeniería del Software, esto implica organizar diferentes sistemas, APIs y bases de datos para que la información fluya de manera autónoma en respuesta a eventos específicos que actuarán como disparadores o triggers.
+
+Tras saber qué es una automatización, a continuación se detallan los tipos de automatizaciones que existen.
+
+\subsection{Tipos de Automatizaciones}
+
+Actualmente existen varios tipos de automatizaciones, cada tipo se enfoca en resolver un tipo de necesidad empresarial:
+
+\begin{itemize}
+
+    \item RPA (Automatizaciones robotizadas): Se centra en construir robots para interactuar con elementos de interfaces de usuario (UI) de la misma forma en la que lo haría un humano, ya sea haciendo clics, rellenando formularios, etc. Es útil para conectar servicios que cambian ante el mismo elemento, pero es muy frágil ya que los elementos de las webs suelen ser difíciles de seleccionar al tener identificadores dinámicos. Algunos de estos son Microsoft Power Automate Desktop o UiPath.
+
+    \item Automatizaciones basadas en código: Consiste en programar scripts o procesos en segundo plano utilizando herramientas del propio lenguaje de programación (como Celery en Python o BullMQ en Node.js). Ofrece un control absoluto a nivel de arquitectura, pero carece de interfaces visuales para que un usuario no técnico entienda el flujo.
+
+    \item Motores de Orquestación BPMN (Business Process Model and Notation): Plataformas empresariales complejas (como Camunda) que utilizan estándares formales para modelar y ejecutar procesos de negocio largos e intrincados. Están diseñadas para grandes corporaciones con flujos de aprobación de múltiples niveles. UiPath a parte de ser un motor de RPA, también ofrece un motor de orquestación BPMN, pero su complejidad y coste lo hacen poco adecuado para pymes.
+
+    \item iPaaS y Motores de Flujo de Trabajo Visuales: Plataformas de integración como servicio (como n8n, Zapier o Make). Permiten conectar aplicaciones a través de sus APIs utilizando interfaces gráficas basadas en nodos. Son ágiles, escalables y perfectas para reaccionar a eventos web en tiempo real.
+
+\end{itemize}
+
+\subsection{Herramienta elegida}
+
+Tras esta investigación sobre todos los tipos de herramientas posibles para automatizar, se han evaluado las diferentes alternativas y se ha determinado que la mejor para implementar en este proyecto es n8n. 
+
+Se ha elegido esta sobre las demás ya que, al ser una herramienta fair-code, permite desplegarla en cualquier infraestructura, ya sea mediante Docker o mediante instalación directa. Además de esto, permite poner en práctica la competencia IS3[cite: 16], la cual consiste en dar solución a problemas de integración entre tecnologías. Por último, permitirá integrarse con la aplicación principal a través de llamadas de API, a diferencia de herramientas como Power Automate o UiPath que funcionan como aplicaciones aisladas.
+
+\section{Base de Datos}
+
+Para el correcto funcionamiento de la aplicación, es fundamental seleccionar un sistema de almacenamiento de datos que se adapte a las necesidades del proyecto. Este sistema deberá gestionar el registro tanto de empresas como de particulares, así como la información relativa a las obras e intalaciones, incluyendo la creación de ítems, la gestión de tareas y la visualización de su estado de forma estructurada. Como parte de la evaluación de distintas tecnologías para implementar la arquitectura de la solución, a continuación se analizan los principales modelos de bases de datos y sus opciones de alojamiento.
+
+\subsection{Modelo de base de datos}
+
+
+A la hora de estructurar y almacenar la información, existen dos paradigmas principales en la industria del software:
+
+\begin{itemize}
+    \item Bases de Datos Relacionales (SQL): Este modelo almacena la información en tablas estrictas compuestas por filas y columnas, estableciendo relaciones claras entre ellas mediante claves primarias y foráneas. Garantizan la integridad referencial y son ideales para dominios de datos altamente estructurados, como la relación entre un usuario, su empresa y sus tareas asignadas. Las bases de datos más famosas y utilizadas en este ámbito son PostgreSQL, MySQL, MariaDB y Oracle Database.
+
+    \item Bases de Datos No Relacionales (NoSQL): Este paradigma prescinde de esquemas fijos y tablas, almacenando la información en formatos más flexibles como documentos, grafos o pares clave-valor. Son altamente escalables y útiles cuando la estructura de los datos es cambiante o impredecible. Los ejemplos más destacados de bases de datos NoSQL incluyen MongoDB, Cassandra, Redis y CouchDB.
+\end{itemize}
+
+\subsection{Alojamiento}
+
+Una vez definido el modelo de datos, es necesario determinar dónde y cómo se desplegará el motor de la base de datos, existiendo dos enfoques principales:
+
+\begin{itemize}
+    \item Alojamiento en la Nube (Cloud / DBaaS): También conocido como \textit{Database as a Service}, consiste en delegar la infraestructura, el mantenimiento y las copias de seguridad a un proveedor de servicios en la nube. Permite una alta disponibilidad sin necesidad de gestionar la infraestructura subyacente. Entre los servicios más famosos se encuentran Amazon RDS (AWS), Google Cloud SQL, MongoDB Atlas y plataformas modernas como Supabase o Firebase.
+
+    \item Alojamiento Local (On-Premise / Self-Hosted): En este modelo, el motor de base de datos se instala y gestiona directamente en servidores propios o en la máquina local, frecuentemente utilizando tecnologías de contenerización. Ofrece un control absoluto sobre los datos, la configuración de red y la arquitectura, reduciendo la dependencia económica de terceros. Herramientas como Docker facilitan enormemente este tipo de despliegues estandarizados.
+\end{itemize}
+\subsection{Elección tecnológica}
+
+Tras evaluar los diferentes modelos y opciones de alojamiento, se ha determinado que la tecnología de base de datos óptima para el desarrollo de esta aplicación es PostgreSQL, instalada y desplegada de manera local en la propia máquina (On-Premise).
+
+La elección de un modelo relacional como PostgreSQL se fundamenta en la naturaleza estructurada de la información que la aplicación debe manejar. Dado que el sistema permitirá al usuario registrar tanto una empresa como a un particular, y ofrecerá un tablero Kanban para crear ítems y gestionar tareas de forma clara y estructurada, es imperativo contar con la integridad referencial que proporciona una base de datos SQL para asegurar la consistencia entre las entidades.
+
+Por otro lado, se opta por una instalación local debido a dos factores críticos para el proyecto:
+
+\begin{itemize}
+    \item \textbf{Facilidad de uso e implementación:} Alojar la base de datos en la propia máquina (utilizando tecnologías de contenerización como Docker) simplifica enormemente el entorno de desarrollo y permite implementar y evaluar la solución de forma rápida e independiente.
+    \item \textbf{Seguridad y control de datos:} Mantener la base de datos en infraestructura propia garantiza un control absoluto sobre el acceso a la información. Al estar orientada a facilitar el funcionamiento de pequeñas y medianas empresas, es vital asegurar que sus datos operativos no se exponen innecesariamente a servicios de terceros, reforzando la privacidad y la fiabilidad del sistema.
+\end{itemize}
+
+\section{Frontend (Interfaz de Usuario)}
+
+El Frontend constituye la capa de presentación de la aplicación, siendo el punto de interacción directo con el usuario. En el contexto de este proyecto, esta capa asume una responsabilidad crítica, ya que debe proporcionar una experiencia fluida tanto para el registro de empresas y particulares, como para la manipulación interactiva del tablero Kanban, permitiendo crear ítems, gestionar tareas y visualizar su estado de forma clara y estructurada.
+
+A continuación, se analizan los paradigmas y tecnologías disponibles para el desarrollo de esta interfaz.
+
+\subsection{Paradigmas de Arquitectura Web}
+
+El desarrollo de interfaces web ha evolucionado significativamente, destacando dos enfoques principales en la actualidad:
+
+\begin{itemize}
+    \item Multi-Page Application (MPA): Es el modelo tradicional donde cada interacción del usuario con el servidor devuelve una página HTML completamente nueva. Aunque es excelente para el posicionamiento SEO (Search Engine Optimization), resulta ineficiente para aplicaciones altamente interactivas, ya que las recargas constantes interrumpen la experiencia del usuario.
+    
+    \item Single-Page Application (SPA): En este modelo, el navegador carga un único documento HTML inicial y actualiza dinámicamente el contenido mediante JavaScript al interactuar con el backend a través de APIs. Este enfoque proporciona una fluidez similar a la de una aplicación de escritorio, siendo el estándar actual para herramientas de gestión e interfaces ricas.
+\end{itemize}
+
+\subsection{Tecnologías y Frameworks}
+
+El desarrollo web moderno se asienta sobre lenguajes estándar de Internet como HTML, CSS y JavaScript. Sin embargo, para gestionar la complejidad de una SPA, la industria utiliza frameworks y librerías que optimizan la manipulación del DOM (Document Object Model):
+
+\begin{itemize}
+    \item Angular: Un framework robusto y completo mantenido por Google. Impone una arquitectura estricta basada en TypeScript y el patrón Modelo-Vista-Controlador (MVC). Es ideal para proyectos empresariales a gran escala, pero posee una curva de aprendizaje pronunciada.
+    
+    \item React: Una librería desarrollada por Meta (Facebook) enfocada en la creación de interfaces de usuario mediante componentes reutilizables y un DOM virtual. Su ecosistema es inmenso y permite una gran flexibilidad arquitectónica.
+    
+    \item Vue.js: Un framework progresivo que combina la robustez de Angular con la flexibilidad y simplicidad de React. Destaca por su curva de aprendizaje suave y su excelente documentación.
+\end{itemize}
+
+\subsection{Elección tecnológica}
+
+Tras analizar los requisitos del sistema, se ha determinado que el desarrollo del Frontend se realizará con la librería React (junto con lenguajes estándar como JavaScript, HTML y CSS).
+
+La justificación de esta elección se basa en los siguientes puntos:
+
+\begin{itemize}
+    \item \textbf{Arquitectura basada en componentes:} El requisito central de la interfaz es ofrecer un tablero Kanban que facilitará la organización y coordinación entre los usuarios. React permite encapsular la lógica y el diseño de cada "columna", "tarea" o "formulario de solicitud" en componentes independientes y reutilizables, aplicando principios sólidos de la Ingeniería del Software.
+    
+    \item \textbf{Gestión del estado e interactividad:} En un tablero Kanban, mover una tarea de una columna a otra requiere actualizar la interfaz en tiempo real sin recargar la página. El DOM virtual de React y su eficiente gestión del estado local garantizan una experiencia de usuario rápida y sin interrupciones visuales.
+    
+    \item \textbf{Ecosistema de librerías:} React cuenta con un extenso ecosistema de herramientas de código abierto, incluyendo librerías específicas para implementar funcionalidades de "arrastrar y soltar" (\textit{drag-and-drop}), las cuales son indispensables para el correcto funcionamiento del tablero de tareas.
+\end{itemize}
+\section{Backend (Lógica de Servidor y API)}
+
+El Backend constituye la lógica de la aplicación. Su responsabilidad principal es gestionar la autenticación de los usuarios, aplicar las reglas de negocio necesarias para el registro de empresas y particulares, e interactuar de forma segura con la base de datos PostgreSQL. Además, en esta arquitectura actuará como el orquestador principal que enviará y recibirá eventos  hacia el motor de automatización n8n.
+
+\subsection{Lenguajes y Entornos de Ejecución}
+
+Para el desarrollo de la Interfaz de Programación de Aplicaciones (API), existen diversos entornos y lenguajes ampliamente adoptados en la industria de la Ingeniería del Software:
+
+\begin{itemize}
+    \item Java (con Spring Boot): Es el estándar empresarial por excelencia. Ofrece un tipado estricto, una máquina virtual muy madura y un marco de trabajo robusto que fomenta la aplicación de patrones de diseño clásicos. Aunque es excelente para sistemas corporativos de gran escala, su configuración inicial y verbosidad pueden resultar pesadas para un desarrollo ágil y rápido.
+    \item Python (con Django o FastAPI): Python es un lenguaje altamente legible y versátil. Django ofrece una solución monolítica con "baterías incluidas" ideal para desarrollos rápidos, mientras que FastAPI destaca por su alto rendimiento y la autogeneración de documentación de APIs basada en estándares como OpenAPI. Sin embargo, esta opción aumenta la complejidad ya que necesita muchas dependencias externas para gestionar la asincronía y la integración con n8n.
+    \item Node.js (con Express o NestJS): Permite ejecutar JavaScript (o TypeScript) del lado del servidor. Su arquitectura orientada a eventos y de entrada/salida asíncrona lo hace extremadamente eficiente para manejar múltiples peticiones concurrentes y llamadas a servicios externos. Se apoya fuertemente en formatos estándar de intercambio de datos de Internet como JSON.
+\end{itemize}
+
+\subsection{Elección tecnológica}
+
+Como parte del objetivo de evaluar distintas tecnologías para implementar la arquitectura de la solución, se ha decidido desarrollar el Backend utilizando el entorno Node.js.
+
+La elección de esta tecnología se fundamenta en las siguientes razones técnicas y metodológicas:
+
+\begin{itemize}
+    \item \textbf{Gestión de asincronía y Webhooks:} Dado que la aplicación delega la ejecución de procesos repetitivos a n8n, el servidor debe manejar eficientemente múltiples llamadas de red de forma asíncrona. Node.js está diseñado inherentemente para este tipo de cargas de trabajo no bloqueantes, garantizando que el sistema se comporte de forma fiable y eficiente.
+    \item \textbf{Sinergia de lenguaje (Full-Stack JavaScript):} Al haber seleccionado un paradigma SPA (Single-Page Application) para el Frontend, el uso de Node.js permite unificar el ecosistema en toda la pila tecnológica. Esto facilita el mantenimiento del código, el intercambio de estructuras de datos mediante JSON , y agiliza la resolución de las necesidades mínimas en cada \textit{sprint} de la metodología ágil adoptada.
+    \item \textbf{Integración y escalabilidad:} El extenso ecosistema de paquetes de Node.js permite dar solución a problemas de integración de forma rápida, proporcionando herramientas maduras para la conexión con PostgreSQL, la gestión de autenticación y la comunicación con APIs de terceros.
+\end{itemize}
+\cleardoublepage
+\thispagestyle{empty}
+\chapter{Anexo 2}
+\section{Sprint 1: Investigación del sector e investigación tecnológica}
+\subsection{Duración y objetivos del Sprint}
+Durante este primer sprint, el objetivo principal fue realizar una investigación exhaustiva sobre las tecnologías más adecuadas para el proyecto y comprender el funcionamiento de los procesos de obra pública. Se evaluaron diferentes opciones de arquitectura, incluyendo motores de automatización, sistemas de bases de datos, frameworks de frontend y entornos de backend. En cuanto a la memoria, se buscó completar el capítulo 1 y 2 de la memoría, que son respectivamente la introducción y los antecedentes.
+Este sprint se desarrolló desde el 19 de febrero de 2026 hasta el 18 de marzo de 2026, en un principio duraba 3 semanas, pero se extendió una semana más con el fin de dejar el primer y el segundo capítulo terminados.
+\subsection{Desarrollo del Sprint}
+En esta fase, el trabajo se centró en la exploración del ecosistema administrativo de las pymes que colaboran con empresas públicos como AENA. Se investigó el funcionamiento de la Plataforma de Contratación del Sector Público y los requisitos de gestión documental (planes de seguridad, certificaciones AVSEC/AVSAF) que generan la mayor carga administrativa.
+Además, se realizó un análisis técnico comparativo para definir el stack tecnológico:
+\begin{itemize}
+    \item Para el Frontend, se evaluaron Angular, React y Vue.js, seleccionando React por su enfoque basado en componentes y su ecosistema de librerías para interfaces interactivas.
+    \item Para el Backend, se compararon Java (Spring Boot), Python (Django/FastAPI) y Node.js (Express/NestJS), optando por Node.js debido a su eficiencia en la gestión de asincronía y su sinergia con el Frontend.
+    \item Para la base de datos, se contrastaron modelos SQL y NoSQL, eligiendo PostgreSQL por su capacidad para garantizar la integridad referencial en un dominio de datos estructurado.
+    \item Para la automatización, se analizaron RPA, scripts personalizados y motores de orquestación visual, decantándose por n8n por su flexibilidad y facilidad de integración mediante APIs.
+\end{itemize}
+\subsection{Reunión del sprint}
+\subsection{Reunión de retrospectiva}
+\begin{table}[H]
+    \centering
+    \caption{Resumen de estimación y esfuerzo real en Sprint 1.}
+    \label{tab:esfuerzo_s1}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{ID de Sprint} & \textbf{Estimación (Story Points)} & \textbf{Esfuerzo Real (Horas)} \\ \hline
+        S1 & 38 & 45 \\ \hline % Valores de ejemplo basados en tu progreso
+    \end{tabular}
+\end{table}
+% -------------------------------
+% Bibliografía
+% -------------------------------
+\bibliographystyle{apalike}
+\bibliography{bib/ref} 
+\addcontentsline{toc}{chapter}{Referencia bibliográfica} % Añade a la tabla de contenidos
+
+\end{document}
