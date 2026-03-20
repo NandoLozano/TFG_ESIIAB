@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.3.11)  17 MAR 2026 21:07
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.3.11)  19 MAR 2026 19:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1385,13 +1385,19 @@ L3 programming layer <2026-01-19>
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `TFG.out' has not changed.
-(rerunfilecheck)             Checksum: 5C98DEEEAB5CCDC245E17492FA97B1A1;8241.
+
+Package rerunfilecheck Warning: File `TFG.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `TFG.out':
+(rerunfilecheck)             Before: 099A3019B50449B27EEB0466F7224AD7;8249
+(rerunfilecheck)             After:  07DF292337DA04250686D5F012834FFF;8512.
  ) 
 Here is how much of TeX's memory you used:
  30270 strings out of 402983
  592179 string characters out of 5448482
- 1304295 words of memory out of 5000000
+ 1304296 words of memory out of 5000000
  58448 multiletter control sequences out of 15000+600000
  634405 words of font info for 107 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
