@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.3.11)  19 MAR 2026 19:02
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.2) (preloaded format=xelatex 2026.3.11)  23 MAR 2026 20:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1160,17 +1160,17 @@ Overfull \hbox (12.40564pt too wide) in paragraph at lines 31--32
 \openout5 = `TFG.toc'.
 
  [12] (TFG.lof
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
 
 (C:\Users\ferna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 
 (C:\Users\ferna\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (3.48703pt too wide) in paragraph at lines 8--8
+Overfull \hbox (3.48703pt too wide) in paragraph at lines 5--5
  \TU/Carlito(0)/m/n/12 ración propia basada en el concepto de iceberg de deuda 
 técnica [[]].[] [][]  
  []
@@ -1206,82 +1206,63 @@ técnica [[]].[] [][]
 Capítulo 1.
 Package newfloat Info: Setting Plan B file extension to `lof'... on input line 
 1.
-File: figs/Primera_Idea.jpg Graphic file (type bmp)
-<figs/Primera_Idea.jpg>
 [1
 
 
-]
-File: figs/Segunda_Idea.jpg Graphic file (type bmp)
-<figs/Segunda_Idea.jpg>
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-File: figs/Conclusion_Idea.jpg Graphic file (type bmp)
-<figs/Conclusion_Idea.jpg>
-[2]
+] [2]) (chapters/ch2.tex
 LaTeX Font Info:    Font shape `TU/Carlito(0)/m/sl' in size <12> not available
 (Font)              Font shape `TU/Carlito(0)/m/it' tried instead on input line
- 37.
- [3] [4]) (chapters/ch2.tex [5] [6
+ 1.
+ [3] [4
 
 ]
 Capítulo 2.
 File: figs/construccion_aeropuerto.jpg Graphic file (type bmp)
 <figs/construccion_aeropuerto.jpg>
 
-Overfull \hbox (23.9979pt too wide) in paragraph at lines 4--10
+Overfull \hbox (23.9979pt too wide) in paragraph at lines 4--11
 \TU/Carlito(0)/m/n/12 el marco normativo vigente [[]].
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
-[8]
-Overfull \hbox (118.54973pt too wide) in paragraph at lines 20--23
-\TU/Carlito(0)/m/n/12 fueron definidas por la Agencia Estatal de Seguridad Aére
-a (AESA) [[]].
- []
-
-File: figs/Tecnicos.jpg Graphic file (type bmp)
-<figs/Tecnicos.jpg>
-
-Underfull \hbox (badness 3158) in paragraph at lines 30--30
-[][]\TU/Carlito(0)/b/n/12 Figura 2.2[][]: []|\TU/Carlito(0)/m/n/12 Operarios co
-ordinando tareas de mantenimiento e in-
- []
-
-
-Underfull \hbox (badness 6332) in paragraph at lines 30--30
-\TU/Carlito(0)/m/n/12 fraestructura. Fuente: \TU/Carlito(0)/m/it/12 “Discussing
- the work” \TU/Carlito(0)/m/n/12 por Oregon Depart-
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9]
-Overfull \hbox (35.07211pt too wide) in paragraph at lines 35--48
+[5]
+Overfull \hbox (118.54973pt too wide) in paragraph at lines 17--20
+\TU/Carlito(0)/m/n/12 fueron definidas por la Agencia Estatal de Seguridad Aére
+a (AESA) [[]].
+ []
+
+[6]
+File: figs/Tecnicos.jpg Graphic file (type bmp)
+<figs/Tecnicos.jpg>
+
+Underfull \hbox (badness 3158) in paragraph at lines 27--27
+[][]\TU/Carlito(0)/b/n/12 Figura 2.2[][]: []|\TU/Carlito(0)/m/n/12 Operarios co
+ordinando tareas de mantenimiento e in-
+ []
+
+
+Underfull \hbox (badness 6332) in paragraph at lines 27--27
+\TU/Carlito(0)/m/n/12 fraestructura. Fuente: \TU/Carlito(0)/m/it/12 “Discussing
+ the work” \TU/Carlito(0)/m/n/12 por Oregon Depart-
+ []
+
+[7]
+Overfull \hbox (35.07211pt too wide) in paragraph at lines 32--45
 \TU/Carlito(0)/m/n/12 [[], []].
  []
 
 
-Overfull \hbox (37.56926pt too wide) in paragraph at lines 35--48
+Overfull \hbox (37.56926pt too wide) in paragraph at lines 32--45
 \TU/Carlito(0)/m/n/12 Según el último informe del \TU/Carlito(0)/b/n/12 ONTSI \
 TU/Carlito(0)/m/n/12 [[]],
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
 File: figs/Iceberg_DebTec_Pymes.png Graphic file (type bmp)
 <figs/Iceberg_DebTec_Pymes.png>
-
-[11]
-Overfull \hbox (29.82016pt too wide) in paragraph at lines 74--75
+[8] [9]
+Overfull \hbox (29.82016pt too wide) in paragraph at lines 71--72
 \TU/Carlito(0)/m/n/12 gridad referencial de los expedientes y certificaciones [
 [], []]. 
  []
@@ -1289,7 +1270,7 @@ Overfull \hbox (29.82016pt too wide) in paragraph at lines 74--75
 File: figs/Databases_MasUsadas.png Graphic file (type bmp)
 <figs/Databases_MasUsadas.png>
 
-Underfull \hbox (badness 2229) in paragraph at lines 86--86
+Underfull \hbox (badness 2229) in paragraph at lines 83--83
 [][]\TU/Carlito(0)/b/n/12 Figura 2.4[][]: []|\TU/Carlito(0)/m/n/12 Ilustración 
 de las bases de datos más usadas. Fuente:
  []
@@ -1297,7 +1278,7 @@ de las bases de datos más usadas. Fuente:
 File: figs/Frameworks_MasUsados.png Graphic file (type bmp)
 <figs/Frameworks_MasUsados.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--92
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
 [][]\TU/Carlito(0)/b/n/12 Figura 2.5[][]: []|\TU/Carlito(0)/m/n/12 Ilustración 
 de los frameworks más usados. Fuente:
  []
@@ -1309,49 +1290,21 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-(chapters/ch3.tex [12] [13] [14]
+(chapters/ch3.tex [10] [11] [12]
 Capítulo 3.
+File: figs/Primera_Idea.jpg Graphic file (type bmp)
+<figs/Primera_Idea.jpg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- []
+File: figs/Segunda_Idea.jpg Graphic file (type bmp)
+<figs/Segunda_Idea.jpg>
+[13
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--10
-
- []
-
-
-Package todonotes Warning: Trying to put a shadow below a todonote,but the load
-shadowlibrary option was not given when loadingthe todonotes package on input l
-ine 12.
-
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 12.
-
-Overfull \hbox (5.34341pt too wide) in paragraph at lines 12--13
-[]\TU/Carlito(0)/m/n/12 Existen métodos más avanzados para hacer anotaciones, c
-omo los que ofrece [][]\TU/lmtt/m/n/12 todonotes[]\TU/Carlito(0)/m/n/12 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
-
- []
-
-
-Package todonotes Warning: Trying to put a shadow below a todonote,but the load
-shadowlibrary option was not given when loadingthe todonotes package on input l
-ine 14.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
-
- []
-
-) [15
-
-] [16
+]
+File: figs/Conclusion_Idea.jpg Graphic file (type bmp)
+<figs/Conclusion_Idea.jpg>
+) [14] [15] [16
 
 ]
 Apéndice A.
@@ -1391,16 +1344,16 @@ Package rerunfilecheck Warning: File `TFG.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `TFG.out':
-(rerunfilecheck)             Before: 099A3019B50449B27EEB0466F7224AD7;8249
-(rerunfilecheck)             After:  07DF292337DA04250686D5F012834FFF;8512.
+(rerunfilecheck)             Before: 3A38CD75F18EA27A0D5355D55CE2D69B;8597
+(rerunfilecheck)             After:  6310D2AFE3B3ECBDE11007C339790960;8393.
  ) 
 Here is how much of TeX's memory you used:
- 30270 strings out of 402983
- 592179 string characters out of 5448482
+ 30127 strings out of 402983
+ 588944 string characters out of 5448482
  1304296 words of memory out of 5000000
- 58448 multiletter control sequences out of 15000+600000
- 634405 words of font info for 107 fonts, out of 8000000 for 9000
+ 58306 multiletter control sequences out of 15000+600000
+ 634397 words of font info for 106 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 108i,12n,111p,906b,970s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,12n,111p,945b,722s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on TFG.pdf (48 pages).
