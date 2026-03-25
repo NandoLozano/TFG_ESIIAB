@@ -30,3 +30,34 @@ Tras analizar las dos ideas, pensar como poder implementarlas juntas, analizando
     \caption{Ilustración conceptual de la idea del TFG.}
     \label{fig:motivacion_Idea3}
 \end{figure}
+\subsection{Automatizaciones posibles}
+La identificación de procesos repetitivos permite proponer áreas de optimización mediante técnicas de automatización y orquestación de flujos \cite{IBMAutomation2024, EmprendeAprendiendo2025}. Se destacan la sincronización automática de datos de pases aeroportuarios y la monitorización de nuevas licitaciones mediante el consumo de fuentes oficiales y APIs.
+
+\section{Tecnologías del sector}
+El desarrollo de soluciones de gestión modernas requiere el análisis de paradigmas tecnológicos actuales que permitan superar la rigidez de los sistemas tradicionales. En esta sección se evalúan las tecnologías seleccionadas para la arquitectura del proyecto basándose en su rendimiento y fiabilidad en entornos profesionales \cite{Fowler2004, NodeJS_Official}.
+
+\subsection{Arquitectura de Automatización y Datos}
+Para integrar sistemas heterogéneos y garantizar la persistencia, se han analizado las siguientes categorías:
+\begin{itemize}
+    \item \textbf{Motores de Automatización:} Se evaluó el uso de scripts aislados frente a orquestadores visuales como \textit{n8n}, seleccionando este último por su capacidad de integración vía APIs y facilidad de mantenimiento \cite{IBMAutomation2024}.
+    \item \textbf{Gestión de Bases de Datos:} Se compararon modelos NoSQL frente a Relacionales \cite{EDteamSQL, PandoraFMS_BD, MongoDB_Official}, optando por \textit{PostgreSQL} para asegurar la integridad referencial de los expedientes y certificaciones \cite{PostgreSQL_Official, TodoPostgreSQL_Ventajas}.
+\end{itemize}
+
+\subsection{Ecosistema de Desarrollo Full-Stack}
+La creación de interfaces dinámicas como tableros Kanban requiere frameworks modernos. Se analizaron opciones como Angular y Vue \cite{Angular_Official, VueJS_Official}, seleccionando \textit{React} ya que es un estandar muy usado actualmente, eficiente y además he tenido la oportunidad de trabajar con él \cite{4GeeksFrameworks, React_Official, Vid_React_Tutorial}. En el servidor, se utiliza \textit{Node.js} con \textit{Express} para gestionar la asincronía de las tareas de automatización de forma eficiente \cite{NodeJS_Official, Express_Official}. Se podría utilizar springBoot que es más solido, pero no estoy familiarizado con él, mientras que Node es más facil de implementar y tengo algo de experiencia.
+
+\section{Conclusiones de las Tecnologías}
+Tras analizar el estado actual de las pymes del sector, se concluye que la superación de la deuda tecnológica requiere abandonar el modelo de silos manuales.
+Por ultimo, gracias a una encuesta de \cite{StackOverflow2025} podemos observa cuanto usan los desarrolladores las tecnologías mencionadas.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Databases_MasUsadas.png}
+    \caption{Ilustración de las bases de datos más usadas. Fuente: \cite{StackOverflow2025}.}
+    \label{fig:iceberg_deuda_tecnologica}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Frameworks_MasUsados.png}
+    \caption{Ilustración de los frameworks más usados. Fuente: \cite{StackOverflow2025}.}
+    \label{fig:iceberg_deuda_tecnologica}
+\end{figure}

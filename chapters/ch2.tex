@@ -37,8 +37,11 @@ Los técnicos deben realizar reformas, junto con instalaciones eléctricas entre
     \label{fig:discusion_obra}
 \end{figure}
 \newpage
-\section{Soluciones Software del Sector}
-La digitalización en las pequeñas y medianas empresas españolas presenta una evolución irregular. Mientras que el sector público ha avanzado hacia la administración electrónica, las pymes locales tienen una deuda tecnológica significativamente grande que las lastra \cite{DESI2026, SEDIA2026}. Según el último informe del \textbf{ONTSI} \cite{ONTSI_Pymes}, esta brecha es especialmente crítica en el sector de la construcción, que se sitúa como uno de los más rezagados en la adopción de tecnologías disruptivas. A continuación, se describen las herramientas predominantes y las limitaciones que perpetúan esta situación.
+\section{Entorno digital del sector}
+Una vez expuesto el marco administrativo y operativo al que se exponen las pequeñas y medianas empresas en la obra pública aeroportuaria, es de vital importancia analizar el entorno software con el que las empresas operan. En este apartado se evaluará el estado actual de digitalización del sector, identificando las carencias de las soluciones de las organizaciones y analizando las herramientas y aplicaciones que predominan actualmente en el mercado.
+\subsection{Deuda técnica del sector}
+A pesar de que el sector público ha avanzado hacia la administración electrónica, la digitalización en las pymes de la construcción e instalaciones presenta una evolución muy irregular \cite{ONTSI_Pymes, DESI2026}. Esta disparidad genera lo que en Ingeniería del Software se conoce como \textbf{deuda técnica}. Esta deuda se produce por el coste de mantener soluciones de software limitadas, parches temporales o arquitecturas deficientes en lugar de invertir en un sistema escalable y bien diseñado.
+En el caso de estas empresas, la deuda técnica no suele provenir de código mal escrito, sino por la falta de un software especializado. Al contar con un capital limitado, siempre surge el miedo de invertir en algo nuevo que no se sabe cual va a ser su rentabilidad.
 \begin{table}[h]
 \centering
 \renewcommand{\arraystretch}{1.2}
@@ -48,53 +51,31 @@ La digitalización en las pequeñas y medianas empresas españolas presenta una 
 Construcción & 59,9 & 75,4 & 58,7 \\ \hline
 Act. Inmobiliarias y Administrativas & 67,1 & 81,1 & 66,4 \\ \hline
 \end{tabular}
-\caption{Valor de la dimensión equipamientos e infraestructuras por tamaño de empresa. Fuente: Elaboración propia a partir de datos del ONTSI (2023).}
+\caption{Valor de la dimensión equipamientos e infraestructuras por tamaño de empresa. Fuente: Elaboración propia a partir de datos del ONTSI (2023)}
 \label{tab:datos_ontsi_construccion}
 \end{table}
-\subsection{Aplicaciones del sector público}
-Las plataformas de AENA y de contratación estatal han agilizado el proceso administrativo externo, pero funcionan como silos de información desconectados del software interno de las empresas. Esto obliga a procesos de volcado de datos manuales y redundantes, aumentando la probabilidad de error humano y la pérdida de integridad de la información \cite{IBMAutomation2024}.
-\subsection{Aplicaciones de gestión y administración}
-Existe una brecha clara según el tamaño de la organización. Las grandes empresas implementan sistemas ERP avanzados, mientras que las pymes suelen recurrir a herramientas heterogéneas \cite{Fowler2004}, podemos destacar las siguientes:
-\begin{itemize}
-    \item {Gestión económica y facturación:} Se recurre a software especializado como \textit{Factusol}, o el futuro \textit{Verifactu}, que suele quedar aislado del resto de procesos operativos.
-	\item {Excel:} Se abusa de las hojas de cálculo para tareas críticas como la gestión de gastos de proyectos, la elaboración de presupuestos, la planificación de tareas y la generación de certificaciones de obra.
-	\item {Comunicación:} Aunque se han adoptado herramientas adecuadas como \textit{Microsoft Teams}, la información compartida en estas no se vincula automáticamente con los cronogramas o la base de datos de la empresa.
-\end{itemize}
-Como resultado, la empresa gestiona su actividad mediante aplicaciones independientes, careciendo de una \bft{cohesión de datos} que permita una visión integral y automatizada del estado de los proyectos.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figs/Iceberg_DebTec_Pymes.png}
-    \caption{Ilustración del iceberg de la deuda tecnológica en las pymes. Fuente: Elaboración propia basada en el concepto de iceberg de deuda técnica \cite{Fowler2004}.}
-    \label{fig:iceberg_deuda_tecnologica}
-\end{figure}
-\subsection{Automatizaciones posibles}
-La identificación de procesos repetitivos permite proponer áreas de optimización mediante técnicas de automatización y orquestación de flujos \cite{IBMAutomation2024, EmprendeAprendiendo2025}. Se destacan la sincronización automática de datos de pases aeroportuarios y la monitorización de nuevas licitaciones mediante el consumo de fuentes oficiales y APIs.
+\subsection{Soluciones software del sector}
+A la hora de hablar de las soluciones software del sector, no existe una única herramienta integral que cubra todas las necesidades de una empresa. Por lo tanto, se debe abordar el ecosistema desde una perspectiva fragmentada, categorizando las aplicaciones según el area en el que se use. En la actualidad, las pymes se estructuran en los siguientes bloques software que suelen estar incomunicados entre ellos.
+\subsubsection{Plataformas de licitacion}
+Las empresas están obligadas a utilizar portales externos como los de AENA o los de la Plataforma de Contratación del Estado. Estas plataformas han agilizado la administración de expedientes, tanto desde el punto de vista de la entidad publicadora, como de la entidad licitadora. Sin embargo, estas webs obligana realizar procesos manuales y redundantes hacía los sistemas internos de la empresa.
+%CAPTURA DE AENA O DE LA PLATAFORMA DE CONTRATACIÓN DEL ESTADO
+\subsubsection{Gestión económica y facturación}
+Para el cumplimiento fiscal y la contabilidad, las pymes recurren a software especializado. El principal inconveniente de estas soluciones en las pymes es que, aunque resuelven la parte administrativa, suelen quedar aisladas del resto de los procesos operativos técnicos de la obra. 
+%CAPTURA FACTUSOL
+Es importante destacar que este entorno va a cambiar con la inminente implantación del sistema \textbf{VeriFactu}. Impulsado por la Agencia Tributaria (AEAT) como medida antifraude, VeriFactu es un nuevo reglamento que exigirá que los programas informáticos de facturación garanticen la inalterabilidad, trazabilidad y conservación de los registros. Esto significa que el software deberá ser capaz de certificar las facturas y enviarlas automáticamente a la administración en tiempo real. 
+Dado que Verifactu establece la normativa, las aplicaciones de facturación deberán adaptar su arquitectura para cumplir con las reglas impuestas. Aquellas herramientas que, por limitaciones o código heredado, no sean capaces de integrar las exigencias, quedarán obsoletas y saldrán del mercado. Esta transición obligará a muchas pymes a adoptar una nueva tecnología, lo cual generará varios problemas derivados entre los que se encuentan la curva de aprendizaje y, por consiguiente, una migración masiva de datos para el nuevo programa.
+%CAPTURA DE ALGUNA NORMATIVA DE VERIFACTU
+\subsubsection{Herramientas de gestión y almacenamiento de datos}
+Ante la falta de sistemas centralizados, existe una tendencia generalizada en el sector a utilizar hojas de cálculo (principalmente Microsoft Excel) como herramientas principales para la gestión y almacenamiento de datos. Estos documentos asumen roles para los que no fueron diseñados, actuando como bases de datos improvisadas para el control de presupuestos, certificaciones de obra, inventario de materiales e incluso gestión de combustibles. 
+Desde el punto de vista de la ingeniería del software, esta práctica genera una importante deuda técnica. Las hojas de cálculo carecen de propiedades transaccionales, no imponen restricciones de integridad referencial y presentan graves limitaciones en entornos de trabajo colaborativo o concurrente. La ausencia de un modelo de datos estructurado provoca duplicidad de información y dificulta la extracción de métricas fiables sobre el estado real de los proyectos.
+%CAPTURA DE EXCEL
+\subsubsection{Sistemas integrados de gestión (ERP)}
+Por último, al analizar las soluciones tecnológicas del mercado, es inevitable mencionar los sistemas empresariales monolíticos, concretamente los sistemas de planificación de recursos empresariales (ERP, por sus siglas en inglés). 
 
-\section{Tecnologías del sector}
-El desarrollo de soluciones de gestión modernas requiere el análisis de paradigmas tecnológicos actuales que permitan superar la rigidez de los sistemas tradicionales. En esta sección se evalúan las tecnologías seleccionadas para la arquitectura del proyecto basándose en su rendimiento y fiabilidad en entornos profesionales \cite{Fowler2004, NodeJS_Official}.
+En teoría, la implantación de un ERP resolvería el problema de la fragmentación de datos mencionado anteriormente, al unificar la facturación, los recursos humanos y la gestión de proyectos en una única plataforma. Sin embargo, en la práctica, estas soluciones presentan barreras de entrada críticas para las pymes del sector aeroportuario. Por un lado, suponen un coste económico y un tiempo de implantación inasumibles para empresas de tamaño reducido. Por otro lado, su arquitectura suele ser demasiado rígida para adaptarse a las particularidades y flujos de trabajo tan específicos que imponen organismos como AENA.
 
-\subsection{Arquitectura de Automatización y Datos}
-Para integrar sistemas heterogéneos y garantizar la persistencia, se han analizado las siguientes categorías:
-\begin{itemize}
-    \item \textbf{Motores de Automatización:} Se evaluó el uso de scripts aislados frente a orquestadores visuales como \textit{n8n}, seleccionando este último por su capacidad de integración vía APIs y facilidad de mantenimiento \cite{IBMAutomation2024}.
-    \item \textbf{Gestión de Bases de Datos:} Se compararon modelos NoSQL frente a Relacionales \cite{EDteamSQL, PandoraFMS_BD, MongoDB_Official}, optando por \textit{PostgreSQL} para asegurar la integridad referencial de los expedientes y certificaciones \cite{PostgreSQL_Official, TodoPostgreSQL_Ventajas}.
-\end{itemize}
-
-\subsection{Ecosistema de Desarrollo Full-Stack}
-La creación de interfaces dinámicas como tableros Kanban requiere frameworks modernos. Se analizaron opciones como Angular y Vue \cite{Angular_Official, VueJS_Official}, seleccionando \textit{React} ya que es un estandar muy usado actualmente, eficiente y además he tenido la oportunidad de trabajar con él \cite{4GeeksFrameworks, React_Official, Vid_React_Tutorial}. En el servidor, se utiliza \textit{Node.js} con \textit{Express} para gestionar la asincronía de las tareas de automatización de forma eficiente \cite{NodeJS_Official, Express_Official}. Se podría utilizar springBoot que es más solido, pero no estoy familiarizado con él, mientras que Node es más facil de implementar y tengo algo de experiencia.
-
-\section{Conclusiones de las Tecnologías}
-Tras analizar el estado actual de las pymes del sector, se concluye que la superación de la deuda tecnológica requiere abandonar el modelo de silos manuales.
-Por ultimo, gracias a una encuesta de \cite{StackOverflow2025} podemos observa cuanto usan los desarrolladores las tecnologías mencionadas.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figs/Databases_MasUsadas.png}
-    \caption{Ilustración de las bases de datos más usadas. Fuente: \cite{StackOverflow2025}.}
-    \label{fig:iceberg_deuda_tecnologica}
-\end{figure}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figs/Frameworks_MasUsados.png}
-    \caption{Ilustración de los frameworks más usados. Fuente: \cite{StackOverflow2025}.}
-    \label{fig:iceberg_deuda_tecnologica}
-\end{figure}
+Por un lado, destacan los \textbf{ERPs genéricos y modulares}, entre los cuales podemos destacar Odoo, siendo una de las opciones mas valroadas por la pymes al ser Open Source. Permite a la empresa instalar únicamente las aplicaciones que necesitan. Además de Odoo, tambien existe Microsfot 365 Business central. Es el estandar corporativo,siendo robusto, pero presentando ciertas limitaciones, las principales serían sus licencias de alto coste, curva de aprendizaje y tiempos de de implantación que suelen ser meses.
+%CAPTURA DE LOS ERPS
+Por otro lado, existen \textbf{ERPs verticales específicos para la construcción}. Estos ERPs son soluciones diseñadas para el secotr de la construcción. Cuenta con modulos para hacer multiples gestiones como presupuestos o certificaciones de obra. De entras estas, podemos destacar Sigrid y BrickControl
+%CAPTURA DE LOS ERPS
+A pesar de la existencia de la existencia de estas potentes herramientas en el mercado, su adopción para empresas pequeñas es baja al presentar una arquitectura rígida que complica la adaptación a flujos de trabajo específicos. %Seguir, con el porque de que no se implemente en las pymes.
