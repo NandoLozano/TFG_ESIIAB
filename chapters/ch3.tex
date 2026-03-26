@@ -1,13 +1,13 @@
-\section{Propuesta de Solución}
+\chapter{Propuesta de Solución}
 Una vez adentrados en el contexto del sector y habiendo analizado algunas de las diversas aplicaciones que se suelen emplear por la competencia, se procede a realizar una descripción de la propuesta de solución para el desarrollo de este proyecto.
 
-\subsection{Primeras aproximaciones y alternativas descartadas}
+\section{Primeras aproximaciones y alternativas descartadas}
 Antes de definir la arquitectura final, se evaluaron diferentes soluciones para abordar la problemática. Las primeras ideas se centraron en el desarrollo de soluciones aisladas para problemas específicos, como la eliminación de los silos de información. Sin embargo, tras un análisis de viabilidad, estas alternativas fueron descartadas.
 
 \subsubsection{Primera Alternativa: Migración de datos}
 La primera solución tuvo por objetivo la eliminación de los silos de información. Para ello, se planteó realizar una migración de datos de los diferentes proyectos a una base de datos en Access. La elección de esta tecnología se justificó por ser una aplicación del ecosistema de Microsoft 365. Al pertenecer a este entorno, este software posee una compatibilidad muy alta con las hojas de cálculo de Excel. En la Figura \ref{fig:motivacion_Idea1} podemos ver un esquema conceptual de la propuesta. 
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figs/Primera_Idea.jpg}
     \caption{Ilustración conceptual de la primera solución propuesta.}
@@ -19,7 +19,7 @@ Durante la fase de diseño, se manifestó un problema crítico: había una incon
 \subsubsection{Segunda Alternativa: Web Scraping y automatización en Python} 
 Tras descartar temporalmente la migración de datos, el enfoque se dirigió hacia el \textit{Web Scraping} y las automatizaciones. Se intentó crear un programa en Python enfocado en el \textit{backend} que permitiese manejar varios procesos y que además estuviese diseñado para que un usuario no especializado pudiera usarlo. Estas acciones irían desde un análisis de precio de billetes de avión, hasta la compra del billete seleccionado. Este programa usaría archivos JSON con la información de los empleados que vayan a embarcar. En la Figura \ref{fig:motivacion_Idea2} podemos ver un resumen de en qué consistiría el proyecto. Al usar archivos JSON, no existiría el problema de desplegar una base de datos completa, volviendo la implementación más sencilla a priori.
 
-\begin{figure}[H]
+\begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figs/Segunda_Idea.jpg}
     \caption{Ilustración conceptual de la segunda solución propuesta.}
@@ -38,7 +38,7 @@ Por ello, se optó por un cambio de paradigma tecnológico: abordar la problemá
     \includegraphics[width=0.7\textwidth]{figs/Conclusion_Idea.jpg}
     \caption{Ilustración conceptual de la idea del TFG.}
     \label{fig:motivacion_Idea3}
-\end{figure}aciones posibles}
+\end{figure}
 
 En este contexto, la plataforma centralizada se diseñará para dar soporte a los diferentes perfiles que interactúan en la empresa constructora. El sistema permitirá gestionar de manera eficiente y colaborativa la documentación, los proyectos y la logística, todo ello en un entorno unificado y en tiempo real. 
 
@@ -52,8 +52,8 @@ A continuación, se detalla una lista de las principales funcionalidades y carac
     \item \textbf{Panel de control (Dashboard) visual:} Interfaz unificada para la monitorización del estado global de los proyectos.
     \item \textbf{Autogestión mediante tableros Kanban:} Sistema visual de columnas y tarjetas para el seguimiento ágil de las tareas asignadas a cada equipo o empleado.
     \item \textbf{Planificación semanal y control horario:} Módulos dedicados a la asignación de turnos y al fichaje o registro de jornada laboral de los operarios.
-    \item \textbf{Automatización de flujos de trabajo:} Integración de procesos en segundo plano (orquestados mediante n8n) para la generación automática de documentos y la sincronización de datos sin intervención manual.
-    \item \textbf{Gestión de roles y permisos:} Control de acceso basado en el perfil del usuario (administrador, técnico, encargado u operario) para garantizar la seguridad de la información.
+    \item \textbf{Automatización de flujos de trabajo:} Integración de procesos en segundo plano para la generación automática de documentos y la sincronización de datos sin intervención manual.
+    \item \textbf{Gestión de roles y permisos:} Control de acceso basado en el perfil del usuario para garantizar la seguridad de la información.
 \end{itemize}
 
 \section{Metodología} 
@@ -62,14 +62,14 @@ En esta sección se explica la metodología utilizada para el desarrollo del pro
 \subsection{Elección de la metodología} 
 Para el desarrollo de este proyecto se ha optado por utilizar una adaptación del marco de trabajo ágil \textbf{Scrum}. Según la Guía de Scrum (\textit{The Scrum Guide}), Scrum es un marco de trabajo que ayuda a generar valor a través de soluciones adaptativas para problemas complejos \cite{ScrumGuide}. Esto implica que Scrum no es exactamente una metodología, sino un modelo basado en la autoorganización de los equipos y la iteración continua.
 
-Scrum, fundamentado en el empirismo y el pensamiento \textit{Lean}, emplea un enfoque iterativo e incremental para mejorar la previsibilidad y mitigar el riesgo. A través de eventos en cada \textbf(Sprint), se persiguen tres pilares fundamentales: la transparencia, la inspección y la adaptación. La transparencia asegura la visibilidad del trabajo, permitiendo inspecciones frecuentes para identificar variaciones. La adaptación se realiza de manera eficiente ante cualquier desviación, para promover los cambios necesarios en el proceso de desarrollo.
+Scrum, fundamentado en el empirismo y el pensamiento \textit{Lean}, emplea un enfoque iterativo e incremental para mejorar la previsibilidad y mitigar el riesgo. A través de eventos en cada \textbf{Sprint}, se persiguen tres pilares fundamentales: la transparencia, la inspección y la adaptación. La transparencia asegura la visibilidad del trabajo, permitiendo inspecciones frecuentes para identificar variaciones. La adaptación se realiza de manera eficiente ante cualquier desviación, para promover los cambios necesarios en el proceso de desarrollo.
 
 A continuación, se proporcionará una descripción detallada de los elementos clave de Scrum, que incluyen artefactos, roles y eventos:
 
 \textbf{Artefactos}
 \begin{itemize}
     \item \textbf{Product Backlog (PB):} Es una lista priorizada y emergente de todo lo que se sabe que es necesario para el producto. Contiene requisitos funcionales y no funcionales que, al implementarse, se convierten en la visión que tiene el Product Owner.
-    \item \textbf{Sprint Backlog (SB):} Es una lists de PBI que se pretenden desarrollar durante la siguiente iteración}. Es una imagen visible y en tiempo real del trabajo que los desarrolladores planean realizar durante el Sprint para lograr el objetivo del Sprint.
+    \item \textbf{Sprint Backlog (SB):} Es una lists de PBI que se pretenden desarrollar durante la siguiente iteración. Es una imagen visible y en tiempo real del trabajo que los desarrolladores planean realizar durante el Sprint para lograr el objetivo del Sprint.
     \item \textbf{Incremento del producto:} Es el resultado tangible y potencialmente entregable de un \textit{Sprint}. Durante cada Sprin, se trabajara para crear un producto funcional y terminado en base a los PBI.
     \item \textbf{Product Backlog Item (PBI):} Son los elementos individuales que componen el PB. Pueden ser de diversos tipos: Peticiones de características, Requisitos no funcionales, Experimentos, Historias de Usuario, Bugs, Casos de Uso, Capacidades y Épicas.
     \item \textbf{Sprint Burndown Chart(SBC):} Es una herramienta que sirve para observar el progreso del equipo durante un Sprint específico. Este gráfico muestra la cantidad de trabajo restante en relación con el tiempo transcurrido dentro de ese Sprint.
@@ -93,24 +93,59 @@ A continuación, se proporcionará una descripción detallada de los elementos c
 \end{itemize}
 
 \subsection{Adaptación de la metodología} 
-El motivo principal por el cual se ha seleccionado el marco de trabajo Scrum es la naturaleza innovadora y evolutiva de este proyecto. Al tratarse de una solución tecnológica para un problema complejo (la deuda técnica y la fragmentación de datos), se asumió desde el principio que los requisitos podían cambiar y pivotar, tal y como ocurrió durante el descarte de las primeras alternativas tecnológicas.
+El motivo principal por el cual se ha seleccionado el marco de trabajo Scrum es la naturaleza innovadora y evolutiva de este proyecto. Al tratarse de una solución tecnológica para un problema complejo como lo és la deuda técnica y la fragmentación de datos, se asumió desde el principio que los requisitos podían cambiar y pivotar.
 
 No obstante, dado que el equipo de desarrollo está formado únicamente por el autor del TFG, ha sido necesario adaptar el marco Scrum a esta situación, modificando y eliminando ciertos eventos para que poder trabajar de la mejor forma posible:
 
 \begin{itemize}
     \item \textbf{Adaptación de Eventos:} Se han eliminado las reuniones diarias (\textit{Daily Scrum}), carece de sentido realizar reuniones diarias en un proyecto en el cual no todos los dias se trabaja la misma cantidad de tiempo. Sin embargo, se han mantenido rigurosamente las \textit{Sprint Reviews} y \textit{Sprint Retrospectives}. La duración de los \textit{Sprints} se ha establecido en iteraciones de entre 2 y 3 semanas. Al finalizar cada iteración, el autor ha mantenido reuniones de seguimiento con el tutor y cotutor del TFG para validar los objetivos alcanzados y planificar el siguiente \textit{Sprint}.
-    \item \textbf{Adaptación de Roles:} El autor del Trabajo de Fin de Grado ha asumido una doble función, actuando como \textbf{Desarrollador} (escribiendo el código y diseñando la arquitectura) y como \textbf{Scrum Master} (gestionando la planificación y el cumplimiento de las entregas). Por su parte, la figura del \textbf{Product Owner} ha recaído sobre la tutoría del TFG, quienes han representado los intereses académicos y funcionales del "cliente", validando el valor de cada incremento entregado.
+    \item \textbf{Adaptación de Roles:} El autor del Trabajo de Fin de Grado ha asumido una doble función, actuando como \textbf{Desarrollador},y como \textbf{Scrum Master}, por lo que deberá encargarse de diseñar la solución software y además deberá velar por el cumplimiento del marco Scrum. Por su parte, la figura del \textbf{Product Owner} ha recaído sobre la tutoría del TFG, quienes han representado los intereses académicos y funcionales del "cliente", validando el valor de cada incremento entregado.
 \end{itemize}
 
 \subsection{Planificación inicial} 
 Antes de comenzar con el desarrollo técnico de la plataforma, el autor, en consenso con la tutoría, estableció el objetivo principal: crear un entorno de software modular que centralizase la gestión operativa y administrativa de las pymes del sector aeroportuario.
 
-Se definieron los requisitos del sistema de manera formal, derivando en las funcionalidades clave mencionadas en el apartado anterior, tales como la automatización de documentos, la gestión de operarios (AVSAF/AVSEC), el desarrollo de tableros Kanban y el control dinámico de los expedientes de obra pública.
+Se definieron los requisitos del sistema de manera formal, derivando en las funcionalidades clave mencionadas en el apartado anterior, tales como la automatización de documentos, la gestión de operarios, el desarrollo de tableros Kanban y el control dinámico de los expedientes de obra pública.
 
-Como paso previo a la implementación final, la planificación inicial contempló un periodo de estudio tecnológico (\textit{Sprint} 0 o fase de \textit{Research}). Durante esta etapa, se realizaron pruebas de concepto que culminaron con el descarte justificado de tecnologías como Microsoft Access o \textit{scripts} aislados en Python, pivotando hacia la investigación de motores de orquestación como n8n y \textit{frameworks} de desarrollo web modernos.
+Como paso previo a la implementación final, la planificación inicial contempló un periodo de estudio tecnológico (\textit{Sprint} 0 o fase de \textit{Research}). Durante esta etapa, se realizaron pruebas de concepto que culminaron con el descarte justificado de tecnologías como Microsoft Access o \textit{scripts} aislados en Python, pivotando hacia la investigación de motores de orquestación de procesos y \textit{frameworks} de desarrollo web modernos.
 
 Una vez validadas estas pruebas de concepto y definida la viabilidad de la arquitectura, se procedió a la implementación de los módulos del sistema de manera iterativa e incremental, priorizando aquellos componentes que aportaban mayor valor a la orquestación de datos. 
-% (Opcional: Para más información sobre el cronograma y desarrollo del sistema, véase el Anexo correspondiente).
+% DIAGRAMA DE GANTT
+
+\section{Herramientas utilizadas}
+Para garantizar el correcto desarrollo, organización y documentación de este Trabajo de Fin de Grado, se ha empleado un conjunto de tecnologías y aplicaciones de uso extendido en la industria del software. A continuación, se detallan las herramientas categorizadas según su propósito en el ciclo de vida del proyecto. Para información adicional sobre su configuración e instalación, véase el Anexo correspondiente.
+
+\subsection{Herramientas para la gestión del proyecto}
+\begin{itemize}
+    \item \textbf{Jira:} Es una avanzada herramienta de gestión de proyectos ágiles que facilita la planificación, supervisión y entrega de software de alta calidad de manera segura. Esta herramienta ha sido útil para gestionar el proyecto además de ayudar al equipo de desarrollo a avanzar en su trabajo y llevar el control tanto del trabajo realizado como el pendiente.
+    \item \textbf{Git y GitHub:} Git es un sistema de control de versiones gratuito que está creado para gestionar proyectos con eficacia. Mientras que GitHub es una plataforma basada en la web que utiliza Git para el control de versiones. Tanto Git como GitHub han sido herramientas esenciales que han proporcionado al autor un medio efectivo para gestionar versiones y cambios del proyecto
+    \item \textbf{Microsoft Teams:} Es una aplicación de colaboración creada para el trabajo híbrido para que los equipos se mantengan informados, organizados y conectados. Esta herramienta ha servido para la comunicación entre el autor y los tutores e incluso como medio para la realización de reuniones.
+\end{itemize}
+
+\subsection{Herramientas para el desarrollo del proyecto}
+\begin{itemize}
+    \item \textbf{Visual Studio Code:} Es un editor de código fuente ligero y eficaz que está disponible para los principales sistemas operativos y que tiene compatibilidad integrada con numerosos lenguajes de programación. Es la herramienta con la que se ha desarrollado el código del proyecto por parte del equipo de desarrollo.
+    \item \textbf{n8n:} Plataforma de automatización de flujos de trabajo (\textit{Workflows}) basada en nodos. Ha sido la pieza central del \textit{backend} y la orquestación, permitiendo conectar distintas APIs y automatizar los procesos burocráticos sin necesidad de programar integraciones complejas desde cero.
+    \item \textbf{Python:} Lenguaje de programación de alto nivel utilizado durante las pruebas de concepto iniciales (Sprint 0) para el desarrollo de \textit{scripts} de automatización y extracción de datos (\textit{Web Scraping}).
+    \item \textbf{Front-end:} Capa visual e interactiva del sistema. Para su construcción se han utilizado las siguientes tecnologías:
+    \begin{itemize}
+        \item \textbf{React:} Biblioteca de JavaScript fundamental para la construcción de interfaces de usuario interactivas basadas en componentes reutilizables.
+        \item \textbf{HTML5 y CSS3:} Lenguajes estándar para la estructuración y el diseño de la web.
+        \item \textbf{[Tailwind CSS / Bootstrap]:} \textit{Framework} de utilidades CSS empleado para agilizar el diseño responsivo y la maquetación de la interfaz de la plataforma.
+        \item \textbf{JavaScript / TypeScript:} Lenguaje de programación principal empleado para dotar de lógica a la aplicación en el lado del cliente.
+    \end{itemize}
+    \item \textbf{Persistencia de datos:} Capa encargada del almacenamiento y recuperación estructurada de la información de las obras y usuarios:
+    \begin{itemize}
+        \item \textbf{[PostgreSQL / MySQL / MongoDB / Supabase]:} Sistema de gestión de bases de datos elegido para garantizar la integridad referencial y almacenar los datos unificados del sistema, resolviendo el problema de los silos de información.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Herramientas para la documentación del proyecto}
+\begin{itemize}
+    \item \textbf{\LaTeX\ (Overleaf/Visual studio):} Sistema de composición de textos de alta calidad, orientado a la creación de documentos técnicos y científicos. Se ha utilizado mediante la plataforma colaborativa Overleaf para la redacción, maquetación y gestión bibliográfica de la presente memoria.
+    \item \textbf{Mermaid:} Herramienta de generación de diagramas basada en texto y código (como Markdown). Se ha empleado para modelar los flujos de trabajo de licitaciones y la arquitectura del sistema directamente mediante código, garantizando un estilo visual homogéneo.
+    \item \textbf{[Draw.io / Figma]:} Herramienta de diseño utilizada para la creación de esquemas conceptuales, diagramas de arquitectura y prototipos visuales de la interfaz (\textit{Mockups}).
+\end{itemize}
 
 
 

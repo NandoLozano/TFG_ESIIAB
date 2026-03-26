@@ -6,14 +6,14 @@ Academy, G. (2024).
 
 \bibitem[AENA, 2024a]{AENA_AVSEC}
 AENA (2024a).
-\newblock Instrucción de seguridad aeroportuaria (normativa avsec).
+\newblock Instrucción de seguridad aeroportuaria (avsec).
 
 \bibitem[AENA, 2024b]{AENA_AVSAF}
 AENA (2024b).
-\newblock Seguridad operacional en plataforma (formación avsaf).
+\newblock Seguridad operacional en plataforma(avsaf).
 
-\bibitem[{Agencia Estatal de Seguridad Aérea (AESA)}, 2024]{AESA_Web}
-{Agencia Estatal de Seguridad Aérea (AESA)} (2024).
+\bibitem[AESA, 2024]{AESA_Web}
+AESA (2024).
 \newblock Portal oficial de la agencia estatal de seguridad aérea.
 \newblock Organismo regulador de la seguridad aérea en España.
 
@@ -72,18 +72,15 @@ Inc., M. (2009).
 Meta~Platforms, I. (2013).
 \newblock React: The library for web and native user interfaces.
 
-\bibitem[{Observatorio Nacional de Tecnología y Sociedad (ONTSI)},
-  2023]{ONTSI_Pymes}
-{Observatorio Nacional de Tecnología y Sociedad (ONTSI)} (2023).
-\newblock Informe de digitalización de las pymes. un análisis comparado.
+\bibitem[ONTSI, ]{ONTSI_Pymes}
+ONTSI.
 
-\bibitem[Schwaber and Sutherland, 2020]{ScrumGuide2020}
+\bibitem[Schwaber and Sutherland, 2020]{ScrumGuide}
 Schwaber, K. and Sutherland, J. (2020).
 \newblock The scrum guide.
 
-\bibitem[{Secretaría de Estado de Digitalización e Inteligencia Artificial},
-  2024]{SEDIA2026}
-{Secretaría de Estado de Digitalización e Inteligencia Artificial} (2024).
+\bibitem[{SEDIA}, 2024]{SEDIA2026}
+{SEDIA} (2024).
 \newblock Estadísticas e informes del sector digital en españa.
 
 \bibitem[{Stack Overflow}, 2025]{StackOverflow2025}
