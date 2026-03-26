@@ -1,38 +1,124 @@
-\chapter{Propuesta de Solución, Metodología y Herramientas}
-Una vez adentrados en el contexto del sector y habiendo analizado las aplicaciones empleadas por la competencia, se procede a realizar una descripción de la propuesta de solución diseñada para este proyecto, así como una descripción de la metodología utilizada a lo largo de este proyecto, junto con la adaptación que se ha llevado a cabo de esta.
-Además, se mencionarán las distintas herramientas que han sido utilizadas tanto para la gestión, desarrollo y documentación del proyecto.
 \section{Propuesta de Solución}
-Una vez adentrados en el contexto del sector y habiendo analizado algunas de las diversas aplicaciones que se suele emplear por la competencia, se procede a realizar una descripción de la propuesta de solución para el desarrollo de este proyecto.
+Una vez adentrados en el contexto del sector y habiendo analizado algunas de las diversas aplicaciones que se suelen emplear por la competencia, se procede a realizar una descripción de la propuesta de solución para el desarrollo de este proyecto.
+
 \subsection{Primeras aproximaciones y alternativas descartadas}
 Antes de definir la arquitectura final, se evaluaron diferentes soluciones para abordar la problemática. Las primeras ideas se centraron en el desarrollo de soluciones aisladas para problemas específicos, como la eliminación de los silos de información. Sin embargo, tras un análisis de viabilidad, estas alternativas fueron descartadas.
-\subsubsection{Primera Solucion}
-La primera solución que se pensó fue la de eliminar los silos de información, esto se llevaría a cabo realizando una migración de datos de los diferentes proyectos a una base de datos en Access ¿Porque Access? al ser una aplicación de Microsoft 365 tiene una compatibilidad muy alta con Excel. En la \ref{fig:motivacion_Idea1} podemos ver un resumen de en que consistiría el proyecto. 
-\begin{figure}[h]
+
+\subsubsection{Primera Alternativa: Migración de datos}
+La primera solución tuvo por objetivo la eliminación de los silos de información. Para ello, se planteó realizar una migración de datos de los diferentes proyectos a una base de datos en Access. La elección de esta tecnología se justificó por ser una aplicación del ecosistema de Microsoft 365. Al pertenecer a este entorno, este software posee una compatibilidad muy alta con las hojas de cálculo de Excel. En la Figura \ref{fig:motivacion_Idea1} podemos ver un esquema conceptual de la propuesta. 
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figs/Primera_Idea.jpg}
     \caption{Ilustración conceptual de la primera solución propuesta.}
     \label{fig:motivacion_Idea1}
 \end{figure}
-El problema fue que había una diferencia muy grande entre los tipos de datos, como por ejemplo que en cada hoja la fecha tiene un formato, o que existan campos en algunas hojas que no aparecen en otras, por lo que habría que tomar una decisión importante en el diseño de la base de datos que se repetiría varias veces con distintos campos. Por lo tanto, al ver que la complejidad del proceso era cada vez mayor, decidí abandonar esta idea.
-\subsubsection{Segunda Solucion} 
-Después del fracaso de la anterior idea, se cambió de area, en vez de buscar una solución para los silos de información, se intentó crear un programa básico en Python que permitiese manejar varios procesos, es decir, una aplicación en miniatura, solo implementando el back y unas ayudas para que un usuario que no esté especializado pueda usarlo. Estas acciones irían desde un análisis de billetes de avión para ver cuál es más barato, para después poder comprar el seleccionado usando jsons con la información de los empleados que vayan a embarcar. En la \ref{fig:motivacion_Idea2} podemos ver un resumen de en que consistiría el proyecto. No tendríamos el prblema de usar una bbdd al usar json y sería, al parecer, una implementación sencilla, lo cual cambiaría poco después.
-\begin{figure}[h]
+
+Durante la fase de diseño, se manifestó un problema crítico: había una inconsistencia demasiado grande entre los datos de origen. Existían diferencias muy notables entre formatos, como pueden ser las fechas (donde en cada fichero difiere el separador: 2026-01-01, 2026/01/01) y esquemas de datos irregulares, como la inclusión de diferentes atributos en cada documento. Todos estos inconvenientes provocarían una recurrente toma de decisiones en el diseño de la base de datos a lo largo del desarrollo. Por lo tanto, al ver que la complejidad del proceso era cada vez mayor, se decidió abandonar esta vía.
+
+\subsubsection{Segunda Alternativa: Web Scraping y automatización en Python} 
+Tras descartar temporalmente la migración de datos, el enfoque se dirigió hacia el \textit{Web Scraping} y las automatizaciones. Se intentó crear un programa en Python enfocado en el \textit{backend} que permitiese manejar varios procesos y que además estuviese diseñado para que un usuario no especializado pudiera usarlo. Estas acciones irían desde un análisis de precio de billetes de avión, hasta la compra del billete seleccionado. Este programa usaría archivos JSON con la información de los empleados que vayan a embarcar. En la Figura \ref{fig:motivacion_Idea2} podemos ver un resumen de en qué consistiría el proyecto. Al usar archivos JSON, no existiría el problema de desplegar una base de datos completa, volviendo la implementación más sencilla a priori.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figs/Segunda_Idea.jpg}
     \caption{Ilustración conceptual de la segunda solución propuesta.}
     \label{fig:motivacion_Idea2}
 \end{figure} 
-A la hora de empezar la implementación, se detectaron diversos contratiempos, cuantos más avanzaba la idea, más contras salían, por decir algunas, la cantidad de llamadas que se tendrían que hacer a APIS de las páginas de las compañías de vuelos, junto con el mantenimiento masivo que se tendría que hacer al intentar robotizar los formularios de los billetes de los aviones, esto debido a que los elementos html de estas webs son dinámicos. Básicamente, el error principal fue, intentar crear una aplicación de autotizaciones robotizadas con una herramienta que no esta preparadan para ello, Python es un lenguaje muy potente pero no está preparado para este fin.
+
+A la hora de iniciar la implementación, surgieron diversos contratiempos. Por un lado, la gran cantidad de llamadas que se tendrían que hacer a las APIs oficiales de las aerolíneas incrementaría el coste por ejecución. Por otro lado, el mantenimiento masivo que requerirían los \textit{scripts} de robotización de formularios resultaba inviable, debido a que los elementos HTML de estas webs son dinámicos. El error principal de esta aproximación fue intentar construir un sistema de automatización complejo desde cero usando \textit{scripts} a medida, asumiendo un mantenimiento inasumible para una empresa en condiciones reales.
+
 \subsubsection{Conclusión}
-Tras analizar las dos ideas, pensar como poder implementarlas juntas, analizando que pros y que contras tienen, todo esto con el fin de crear un producto con la mayor calidad posible. Pero tras darle un par de vueltas pensé en descartar las dos ideas y empezar algo nuevo, en vez de programar un programa básico en Python o unificar todos los datos. Porque no enfrentar primero cada problema por separado, primero, solucionar los procesos repetitivos a través de automatizaciones, como rellenar hojas de cálculo con un solo fichero de entrada, después ir construyendo una aplicación que contenga funciones más complejas como tableros Kanban para mejorar la autogestión entre otras, planings semanales para cada persona, sistema de fichado, entre otros. En la \ref{fig:motivacion_Idea3} podemos ver un prototipo de la idea.
-\begin{figure}[h]
+Tras analizar los pros y contras de las alternativas y comprender sus limitaciones, se concluyó que abordar la unificación de datos o la automatización mediante desarrollos a medida aislados no garantizaba un producto de calidad ni escalable.
+
+Por ello, se optó por un cambio de paradigma tecnológico: abordar la problemática de forma modular. La propuesta definitiva de este Trabajo de Fin de Grado consiste, primeramente, en delegar los procesos repetitivos en herramientas de orquestación especializadas. Una vez automatizado el flujo de datos base, se construirá una aplicación web moderna orientada a la autogestión de los equipos, integrando funciones complejas como tableros Kanban, planificación semanal y gestión de operarios. En la Figura \ref{fig:motivacion_Idea3} se muestra el prototipo conceptual de esta solución definitiva.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figs/Conclusion_Idea.jpg}
     \caption{Ilustración conceptual de la idea del TFG.}
     \label{fig:motivacion_Idea3}
-\end{figure}
-\subsection{Automatizaciones posibles}
+\end{figure}aciones posibles}
+
+En este contexto, la plataforma centralizada se diseñará para dar soporte a los diferentes perfiles que interactúan en la empresa constructora. El sistema permitirá gestionar de manera eficiente y colaborativa la documentación, los proyectos y la logística, todo ello en un entorno unificado y en tiempo real. 
+
+Por un lado, el personal de administración y la oficina técnica podrán acceder rápidamente a los pliegos de las licitaciones, realizar el seguimiento económico de las obras, planifcar internamente la ejecución de la obra y gestionar las altas y caducidades de las acreditaciones aeroportuarias de los operarios. Por otro lado, los encargados de obra y los operarios a pie de pista podrán reportar su jornada, visualizar sus tareas asignadas y notificar incidencias.
+
+A continuación, se detalla una lista de las principales funcionalidades y características operativas que se pretenden implementar en la solución propuesta para dotarla del valor necesario:
+
+\begin{itemize}
+    \item \textbf{Gestión de operarios y acreditaciones:} Control exhaustivo del personal, incluyendo el seguimiento automatizado de la vigencia de los certificados AVSAF y AVSEC.
+    \item \textbf{Gestión de expedientes y licitaciones:} Centralización de la documentación técnica (PPT, PCAP) asociada a cada obra pública.
+    \item \textbf{Panel de control (Dashboard) visual:} Interfaz unificada para la monitorización del estado global de los proyectos.
+    \item \textbf{Autogestión mediante tableros Kanban:} Sistema visual de columnas y tarjetas para el seguimiento ágil de las tareas asignadas a cada equipo o empleado.
+    \item \textbf{Planificación semanal y control horario:} Módulos dedicados a la asignación de turnos y al fichaje o registro de jornada laboral de los operarios.
+    \item \textbf{Automatización de flujos de trabajo:} Integración de procesos en segundo plano (orquestados mediante n8n) para la generación automática de documentos y la sincronización de datos sin intervención manual.
+    \item \textbf{Gestión de roles y permisos:} Control de acceso basado en el perfil del usuario (administrador, técnico, encargado u operario) para garantizar la seguridad de la información.
+\end{itemize}
+
+\section{Metodología} 
+En esta sección se explica la metodología utilizada para el desarrollo del proyecto junto con los artefactos, roles y eventos. También se detalla la adaptación que se ha llevado acabo de la metodología y una planificación inicial destacando la hoja de ruta que se tiene en mente antes de comenzar con el desarrollo del proyecto.
+
+\subsection{Elección de la metodología} 
+Para el desarrollo de este proyecto se ha optado por utilizar una adaptación del marco de trabajo ágil \textbf{Scrum}. Según la Guía de Scrum (\textit{The Scrum Guide}), Scrum es un marco de trabajo que ayuda a generar valor a través de soluciones adaptativas para problemas complejos \cite{ScrumGuide}. Esto implica que Scrum no es exactamente una metodología, sino un modelo basado en la autoorganización de los equipos y la iteración continua.
+
+Scrum, fundamentado en el empirismo y el pensamiento \textit{Lean}, emplea un enfoque iterativo e incremental para mejorar la previsibilidad y mitigar el riesgo. A través de eventos en cada \textbf(Sprint), se persiguen tres pilares fundamentales: la transparencia, la inspección y la adaptación. La transparencia asegura la visibilidad del trabajo, permitiendo inspecciones frecuentes para identificar variaciones. La adaptación se realiza de manera eficiente ante cualquier desviación, para promover los cambios necesarios en el proceso de desarrollo.
+
+A continuación, se proporcionará una descripción detallada de los elementos clave de Scrum, que incluyen artefactos, roles y eventos:
+
+\textbf{Artefactos}
+\begin{itemize}
+    \item \textbf{Product Backlog (PB):} Es una lista priorizada y emergente de todo lo que se sabe que es necesario para el producto. Contiene requisitos funcionales y no funcionales que, al implementarse, se convierten en la visión que tiene el Product Owner.
+    \item \textbf{Sprint Backlog (SB):} Es una lists de PBI que se pretenden desarrollar durante la siguiente iteración}. Es una imagen visible y en tiempo real del trabajo que los desarrolladores planean realizar durante el Sprint para lograr el objetivo del Sprint.
+    \item \textbf{Incremento del producto:} Es el resultado tangible y potencialmente entregable de un \textit{Sprint}. Durante cada Sprin, se trabajara para crear un producto funcional y terminado en base a los PBI.
+    \item \textbf{Product Backlog Item (PBI):} Son los elementos individuales que componen el PB. Pueden ser de diversos tipos: Peticiones de características, Requisitos no funcionales, Experimentos, Historias de Usuario, Bugs, Casos de Uso, Capacidades y Épicas.
+    \item \textbf{Sprint Burndown Chart(SBC):} Es una herramienta que sirve para observar el progreso del equipo durante un Sprint específico. Este gráfico muestra la cantidad de trabajo restante en relación con el tiempo transcurrido dentro de ese Sprint.
+    \item \textbf{Product Burndown Chart(PBC):} Es una herramienta que sirve para observar el progreso del equipo durante el ciclo de vida del desarrollo. Este gráfico muestra la cantidad de trabajo restante en relación con el tiempo transcurrido durante el desarrollo.
+\end{itemize}
+
+\textbf{Roles}
+\begin{itemize}
+    \item \textbf{Desarrolladores:} Son los miembros del equipo Scrum comprometidos a crear cualquier aspecto de un incremento utilizable en cada \textit{Sprint}.
+    \item \textbf{Product Owner (PO):} Es el responsable de maximizar el valor del producto resultante del trabajo del equipo Scrum, gestionando de forma efectiva el \textit{Product Backlog}.
+    \item \textbf{Scrum Master (SM):} Es el responsable de establecer Scrum tal como se define en su guía, ayudando a todos a comprender su teoría y práctica, y eliminando impedimentos del equipo.
+\end{itemize}
+
+\textbf{Eventos}
+\begin{itemize}
+    \item \textbf{Sprint:} Son períodos de tiempo fijos (iteraciones) donde se lleva a cabo todo el trabajo necesario para alcanzar los objetivos del producto. Un Sprint solo puede empezar después de que termine el anterior.
+    \item \textbf{Sprint Planning:} Reunión donde se planifica el trabajo a realizar durante el \textit{Sprint} de forma colaborativa.
+    \item \textbf{Daily Scrum:} Reunión diaria de sincronización para inspeccionar el progreso hacia el objetivo del \textit{Sprint}.
+    \item \textbf{Sprint Review:} Sesión al final del \textit{Sprint} para inspeccionar el incremento resultante y adaptar el \textit{Product Backlog} si fuese necesario.
+    \item \textbf{Sprint Retrospective:} Reunión final del \textit{Sprint} enfocada en inspeccionar cómo ha funcionado el equipo y cómo puede mejorar el equipo.
+\end{itemize}
+
+\subsection{Adaptación de la metodología} 
+El motivo principal por el cual se ha seleccionado el marco de trabajo Scrum es la naturaleza innovadora y evolutiva de este proyecto. Al tratarse de una solución tecnológica para un problema complejo (la deuda técnica y la fragmentación de datos), se asumió desde el principio que los requisitos podían cambiar y pivotar, tal y como ocurrió durante el descarte de las primeras alternativas tecnológicas.
+
+No obstante, dado que el equipo de desarrollo está formado únicamente por el autor del TFG, ha sido necesario adaptar el marco Scrum a esta situación, modificando y eliminando ciertos eventos para que poder trabajar de la mejor forma posible:
+
+\begin{itemize}
+    \item \textbf{Adaptación de Eventos:} Se han eliminado las reuniones diarias (\textit{Daily Scrum}), carece de sentido realizar reuniones diarias en un proyecto en el cual no todos los dias se trabaja la misma cantidad de tiempo. Sin embargo, se han mantenido rigurosamente las \textit{Sprint Reviews} y \textit{Sprint Retrospectives}. La duración de los \textit{Sprints} se ha establecido en iteraciones de entre 2 y 3 semanas. Al finalizar cada iteración, el autor ha mantenido reuniones de seguimiento con el tutor y cotutor del TFG para validar los objetivos alcanzados y planificar el siguiente \textit{Sprint}.
+    \item \textbf{Adaptación de Roles:} El autor del Trabajo de Fin de Grado ha asumido una doble función, actuando como \textbf{Desarrollador} (escribiendo el código y diseñando la arquitectura) y como \textbf{Scrum Master} (gestionando la planificación y el cumplimiento de las entregas). Por su parte, la figura del \textbf{Product Owner} ha recaído sobre la tutoría del TFG, quienes han representado los intereses académicos y funcionales del "cliente", validando el valor de cada incremento entregado.
+\end{itemize}
+
+\subsection{Planificación inicial} 
+Antes de comenzar con el desarrollo técnico de la plataforma, el autor, en consenso con la tutoría, estableció el objetivo principal: crear un entorno de software modular que centralizase la gestión operativa y administrativa de las pymes del sector aeroportuario.
+
+Se definieron los requisitos del sistema de manera formal, derivando en las funcionalidades clave mencionadas en el apartado anterior, tales como la automatización de documentos, la gestión de operarios (AVSAF/AVSEC), el desarrollo de tableros Kanban y el control dinámico de los expedientes de obra pública.
+
+Como paso previo a la implementación final, la planificación inicial contempló un periodo de estudio tecnológico (\textit{Sprint} 0 o fase de \textit{Research}). Durante esta etapa, se realizaron pruebas de concepto que culminaron con el descarte justificado de tecnologías como Microsoft Access o \textit{scripts} aislados en Python, pivotando hacia la investigación de motores de orquestación como n8n y \textit{frameworks} de desarrollo web modernos.
+
+Una vez validadas estas pruebas de concepto y definida la viabilidad de la arquitectura, se procedió a la implementación de los módulos del sistema de manera iterativa e incremental, priorizando aquellos componentes que aportaban mayor valor a la orquestación de datos. 
+% (Opcional: Para más información sobre el cronograma y desarrollo del sistema, véase el Anexo correspondiente).
+
+
+
+
+
+
 La identificación de procesos repetitivos permite proponer áreas de optimización mediante técnicas de automatización y orquestación de flujos \cite{IBMAutomation2024, EmprendeAprendiendo2025}. Se destacan la sincronización automática de datos de pases aeroportuarios y la monitorización de nuevas licitaciones mediante el consumo de fuentes oficiales y APIs.
+
 
 \section{Tecnologías del sector}
 El desarrollo de soluciones de gestión modernas requiere el análisis de paradigmas tecnológicos actuales que permitan superar la rigidez de los sistemas tradicionales. En esta sección se evalúan las tecnologías seleccionadas para la arquitectura del proyecto basándose en su rendimiento y fiabilidad en entornos profesionales \cite{Fowler2004, NodeJS_Official}.
