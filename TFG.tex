@@ -84,6 +84,7 @@
 % -------------------------------
 \appendix
 \chapter{Tecnologías y Arquitectura de la Solución}
+\label{ap:tecnologias}
 \section{Automatizaciones}
 
 La automatización de procesos de negocio consiste en el uso de la tecnología para ejecutar tareas y flujos de trabajo recurrentes, minimizando la intervención humana. En el contexto de la Ingeniería del Software, esto implica organizar diferentes sistemas, APIs y bases de datos para que la información fluya de manera autónoma en respuesta a eventos específicos que actuarán como disparadores o triggers.
@@ -114,31 +115,40 @@ Se ha elegido esta sobre las demás ya que, al ser una herramienta fair-code, pe
 
 \section{Base de Datos}
 
-Para el correcto funcionamiento de la aplicación, es fundamental seleccionar un sistema de almacenamiento de datos que se adapte a las necesidades del proyecto. Este sistema deberá gestionar el registro tanto de empresas como de particulares, así como la información relativa a las obras e intalaciones, incluyendo la creación de ítems, la gestión de tareas y la visualización de su estado de forma estructurada. Como parte de la evaluación de distintas tecnologías para implementar la arquitectura de la solución, a continuación se analizan los principales modelos de bases de datos y sus opciones de alojamiento.
+Para el correcto funcionamiento de la aplicación, es fundamental seleccionar un sistema de almacenamiento de datos que se adapte a las necesidades del proyecto. Este sistema deberá gestionar el registro tanto de empresas como de particulares, así como la información relativa a las obras e instalaciones, incluyendo la creación de ítems, la gestión de tareas y la visualización de su estado de forma estructurada. Como parte de la evaluación de distintas tecnologías para implementar la arquitectura de la solución, a continuación se analizan los principales modelos de bases de datos y sus opciones de alojamiento.
 
 \subsection{Modelo de base de datos}
-
 
 A la hora de estructurar y almacenar la información, existen dos paradigmas principales en la industria del software:
 
 \begin{itemize}
-    \item Bases de Datos Relacionales (SQL): Este modelo almacena la información en tablas estrictas compuestas por filas y columnas, estableciendo relaciones claras entre ellas mediante claves primarias y foráneas. Garantizan la integridad referencial y son ideales para dominios de datos altamente estructurados, como la relación entre un usuario, su empresa y sus tareas asignadas. Las bases de datos más famosas y utilizadas en este ámbito son PostgreSQL, MySQL, MariaDB y Oracle Database.
+    \item \textbf{Bases de Datos Relacionales (SQL):} Este modelo almacena la información en tablas estrictas compuestas por filas y columnas, estableciendo relaciones claras entre ellas mediante claves primarias y foráneas. Garantizan la integridad referencial y son ideales para dominios de datos altamente estructurados, como la relación entre un usuario, su empresa y sus tareas asignadas. Las bases de datos más famosas y utilizadas en este ámbito son PostgreSQL, MySQL, MariaDB y Oracle Database.
 
-    \item Bases de Datos No Relacionales (NoSQL): Este paradigma prescinde de esquemas fijos y tablas, almacenando la información en formatos más flexibles como documentos, grafos o pares clave-valor. Son altamente escalables y útiles cuando la estructura de los datos es cambiante o impredecible. Los ejemplos más destacados de bases de datos NoSQL incluyen MongoDB, Cassandra, Redis y CouchDB.
+    \item \textbf{Bases de Datos No Relacionales (NoSQL):} Este paradigma prescinde de esquemas fijos y tablas, almacenando la información en formatos más flexibles como documentos, grafos o pares clave-valor. Son altamente escalables y útiles cuando la estructura de los datos es cambiante o impredecible. Los ejemplos más destacados de bases de datos NoSQL incluyen MongoDB, Cassandra, Redis y CouchDB.
 \end{itemize}
+
+Para contextualizar el uso de estas tecnologías en el mercado actual, la Figura \ref{fig:so_databases} muestra los resultados de la encuesta anual de desarrolladores de Stack Overflow, evidenciando la consolidación de PostgreSQL como el sistema de gestión de bases de datos más utilizado y deseado por los profesionales.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Databases_MasUsadas.png}
+    \caption{Bases de datos más populares según la encuesta anual de Stack Overflow. Fuente: \cite{StackOverflow2025}.}
+    \label{fig:so_databases}
+\end{figure}
 
 \subsection{Alojamiento}
 
 Una vez definido el modelo de datos, es necesario determinar dónde y cómo se desplegará el motor de la base de datos, existiendo dos enfoques principales:
 
 \begin{itemize}
-    \item Alojamiento en la Nube (Cloud / DBaaS): También conocido como \textit{Database as a Service}, consiste en delegar la infraestructura, el mantenimiento y las copias de seguridad a un proveedor de servicios en la nube. Permite una alta disponibilidad sin necesidad de gestionar la infraestructura subyacente. Entre los servicios más famosos se encuentran Amazon RDS (AWS), Google Cloud SQL, MongoDB Atlas y plataformas modernas como Supabase o Firebase.
+    \item \textbf{Alojamiento en la Nube (Cloud / DBaaS):} También conocido como \textit{Database as a Service}, consiste en delegar la infraestructura, el mantenimiento y las copias de seguridad a un proveedor de servicios en la nube. Permite una alta disponibilidad sin necesidad de gestionar la infraestructura subyacente. Entre los servicios más famosos se encuentran Amazon RDS (AWS), Google Cloud SQL, MongoDB Atlas y plataformas modernas como Supabase o Firebase.
 
-    \item Alojamiento Local (On-Premise / Self-Hosted): En este modelo, el motor de base de datos se instala y gestiona directamente en servidores propios o en la máquina local, frecuentemente utilizando tecnologías de contenerización. Ofrece un control absoluto sobre los datos, la configuración de red y la arquitectura, reduciendo la dependencia económica de terceros. Herramientas como Docker facilitan enormemente este tipo de despliegues estandarizados.
+    \item \textbf{Alojamiento Local (On-Premise / Self-Hosted):} En este modelo, el motor de base de datos se instala y gestiona directamente en servidores propios o en la máquina local, frecuentemente utilizando tecnologías de contenerización. Ofrece un control absoluto sobre los datos, la configuración de red y la arquitectura, reduciendo la dependencia económica de terceros. Herramientas como Docker facilitan enormemente este tipo de despliegues estandarizados.
 \end{itemize}
+
 \subsection{Elección tecnológica}
 
-Tras evaluar los diferentes modelos y opciones de alojamiento, se ha determinado que la tecnología de base de datos óptima para el desarrollo de esta aplicación es PostgreSQL, instalada y desplegada de manera local en la propia máquina (On-Premise).
+Tras evaluar los diferentes modelos y opciones de alojamiento, se ha determinado que la tecnología de base de datos óptima para el desarrollo de esta aplicación es \textbf{PostgreSQL}, instalada y desplegada de manera local en la propia máquina (\textit{On-Premise}).
 
 La elección de un modelo relacional como PostgreSQL se fundamenta en la naturaleza estructurada de la información que la aplicación debe manejar. Dado que el sistema permitirá al usuario registrar tanto una empresa como a un particular, y ofrecerá un tablero Kanban para crear ítems y gestionar tareas de forma clara y estructurada, es imperativo contar con la integridad referencial que proporciona una base de datos SQL para asegurar la consistencia entre las entidades.
 
@@ -146,7 +156,7 @@ Por otro lado, se opta por una instalación local debido a dos factores crítico
 
 \begin{itemize}
     \item \textbf{Facilidad de uso e implementación:} Alojar la base de datos en la propia máquina (utilizando tecnologías de contenerización como Docker) simplifica enormemente el entorno de desarrollo y permite implementar y evaluar la solución de forma rápida e independiente.
-    \item \textbf{Seguridad y control de datos:} Mantener la base de datos en infraestructura propia garantiza un control absoluto sobre el acceso a la información. Al estar orientada a facilitar el funcionamiento de pequeñas y medianas empresas, es vital asegurar que sus datos operativos no se exponen innecesariamente a servicios de terceros, reforzando la privacidad y la fiabilidad del sistema.
+    \item \textbf{Seguridad y control de datos:} Mantener la base de datos en infraestructura propia garantiza un control absoluto sobre el acceso a la información. Al estar orientada a facilitar el funcionamiento de pequeñas y medianas empresas, es vital asegurar que sus datos operativos no se expongan innecesariamente a servicios de terceros, reforzando la privacidad y la fiabilidad del sistema.
 \end{itemize}
 
 \section{Frontend (Interfaz de Usuario)}
@@ -160,26 +170,35 @@ A continuación, se analizan los paradigmas y tecnologías disponibles para el d
 El desarrollo de interfaces web ha evolucionado significativamente, destacando dos enfoques principales en la actualidad:
 
 \begin{itemize}
-    \item Multi-Page Application (MPA): Es el modelo tradicional donde cada interacción del usuario con el servidor devuelve una página HTML completamente nueva. Aunque es excelente para el posicionamiento SEO (Search Engine Optimization), resulta ineficiente para aplicaciones altamente interactivas, ya que las recargas constantes interrumpen la experiencia del usuario.
+    \item \textbf{Multi-Page Application (MPA):} Es el modelo tradicional donde cada interacción del usuario con el servidor devuelve una página HTML completamente nueva. Aunque es excelente para el posicionamiento SEO (\textit{Search Engine Optimization}), resulta ineficiente para aplicaciones altamente interactivas, ya que las recargas constantes interrumpen la experiencia del usuario.
     
-    \item Single-Page Application (SPA): En este modelo, el navegador carga un único documento HTML inicial y actualiza dinámicamente el contenido mediante JavaScript al interactuar con el backend a través de APIs. Este enfoque proporciona una fluidez similar a la de una aplicación de escritorio, siendo el estándar actual para herramientas de gestión e interfaces ricas.
+    \item \textbf{Single-Page Application (SPA):} En este modelo, el navegador carga un único documento HTML inicial y actualiza dinámicamente el contenido mediante JavaScript al interactuar con el backend a través de APIs. Este enfoque proporciona una fluidez similar a la de una aplicación de escritorio, siendo el estándar actual para herramientas de gestión e interfaces ricas.
 \end{itemize}
 
 \subsection{Tecnologías y Frameworks}
 
-El desarrollo web moderno se asienta sobre lenguajes estándar de Internet como HTML, CSS y JavaScript. Sin embargo, para gestionar la complejidad de una SPA, la industria utiliza frameworks y librerías que optimizan la manipulación del DOM (Document Object Model):
+El desarrollo web moderno se asienta sobre lenguajes estándar de Internet como HTML, CSS y JavaScript. Sin embargo, para gestionar la complejidad de una SPA, la industria utiliza \textit{frameworks} y librerías que optimizan la manipulación del DOM (\textit{Document Object Model}):
 
 \begin{itemize}
-    \item Angular: Un framework robusto y completo mantenido por Google. Impone una arquitectura estricta basada en TypeScript y el patrón Modelo-Vista-Controlador (MVC). Es ideal para proyectos empresariales a gran escala, pero posee una curva de aprendizaje pronunciada.
+    \item \textbf{Angular:} Un \textit{framework} robusto y completo mantenido por Google. Impone una arquitectura estricta basada en TypeScript y el patrón Modelo-Vista-Controlador (MVC). Es ideal para proyectos empresariales a gran escala, pero posee una curva de aprendizaje pronunciada.
     
-    \item React: Una librería desarrollada por Meta (Facebook) enfocada en la creación de interfaces de usuario mediante componentes reutilizables y un DOM virtual. Su ecosistema es inmenso y permite una gran flexibilidad arquitectónica.
+    \item \textbf{React:} Una librería desarrollada por Meta (Facebook) enfocada en la creación de interfaces de usuario mediante componentes reutilizables y un DOM virtual. Su ecosistema es inmenso y permite una gran flexibilidad arquitectónica.
     
-    \item Vue.js: Un framework progresivo que combina la robustez de Angular con la flexibilidad y simplicidad de React. Destaca por su curva de aprendizaje suave y su excelente documentación.
+    \item \textbf{Vue.js:} Un \textit{framework} progresivo que combina la robustez de Angular con la flexibilidad y simplicidad de React. Destaca por su curva de aprendizaje suave y su excelente documentación.
 \end{itemize}
+
+La adopción masiva de estas tecnologías queda reflejada en la encuesta a desarrolladores de Stack Overflow (Figura \ref{fig:so_frontend}), donde React destaca como la tecnología web más popular de la industria, superando a sus competidores directos y consolidando su posición como el estándar de facto para el desarrollo de interfaces modernas.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Frameworks_MasUsados.png}
+    \caption{Frameworks web más populares según la encuesta anual de Stack Overflow. Fuente: \cite{StackOverflow2025}.}
+    \label{fig:so_frontend}
+\end{figure}
 
 \subsection{Elección tecnológica}
 
-Tras analizar los requisitos del sistema, se ha determinado que el desarrollo del Frontend se realizará con la librería React (junto con lenguajes estándar como JavaScript, HTML y CSS).
+Tras analizar los requisitos del sistema, se ha determinado que el desarrollo del Frontend se realizará con la librería \textbf{React} (junto con lenguajes estándar como JavaScript, HTML y CSS).
 
 La justificación de esta elección se basa en los siguientes puntos:
 
@@ -190,29 +209,30 @@ La justificación de esta elección se basa en los siguientes puntos:
     
     \item \textbf{Ecosistema de librerías:} React cuenta con un extenso ecosistema de herramientas de código abierto, incluyendo librerías específicas para implementar funcionalidades de "arrastrar y soltar" (\textit{drag-and-drop}), las cuales son indispensables para el correcto funcionamiento del tablero de tareas.
 \end{itemize}
+
 \section{Backend (Lógica de Servidor y API)}
 
-El Backend constituye la lógica de la aplicación. Su responsabilidad principal es gestionar la autenticación de los usuarios, aplicar las reglas de negocio necesarias para el registro de empresas y particulares, e interactuar de forma segura con la base de datos PostgreSQL. Además, en esta arquitectura actuará como el orquestador principal que enviará y recibirá eventos  hacia el motor de automatización n8n.
+El Backend constituye la lógica central de la aplicación. Su responsabilidad principal es gestionar la autenticación de los usuarios, aplicar las reglas de negocio necesarias para el registro de empresas y particulares, e interactuar de forma segura con la base de datos PostgreSQL. Además, en esta arquitectura actuará como el orquestador principal que enviará y recibirá eventos hacia el motor de automatización n8n.
 
 \subsection{Lenguajes y Entornos de Ejecución}
 
 Para el desarrollo de la Interfaz de Programación de Aplicaciones (API), existen diversos entornos y lenguajes ampliamente adoptados en la industria de la Ingeniería del Software:
 
 \begin{itemize}
-    \item Java (con Spring Boot): Es el estándar empresarial por excelencia. Ofrece un tipado estricto, una máquina virtual muy madura y un marco de trabajo robusto que fomenta la aplicación de patrones de diseño clásicos. Aunque es excelente para sistemas corporativos de gran escala, su configuración inicial y verbosidad pueden resultar pesadas para un desarrollo ágil y rápido.
-    \item Python (con Django o FastAPI): Python es un lenguaje altamente legible y versátil. Django ofrece una solución monolítica con "baterías incluidas" ideal para desarrollos rápidos, mientras que FastAPI destaca por su alto rendimiento y la autogeneración de documentación de APIs basada en estándares como OpenAPI. Sin embargo, esta opción aumenta la complejidad ya que necesita muchas dependencias externas para gestionar la asincronía y la integración con n8n.
-    \item Node.js (con Express o NestJS): Permite ejecutar JavaScript (o TypeScript) del lado del servidor. Su arquitectura orientada a eventos y de entrada/salida asíncrona lo hace extremadamente eficiente para manejar múltiples peticiones concurrentes y llamadas a servicios externos. Se apoya fuertemente en formatos estándar de intercambio de datos de Internet como JSON.
+    \item \textbf{Java (con Spring Boot):} Es el estándar empresarial por excelencia. Ofrece un tipado estricto, una máquina virtual muy madura y un marco de trabajo robusto que fomenta la aplicación de patrones de diseño clásicos. Aunque es excelente para sistemas corporativos de gran escala, su configuración inicial y verbosidad pueden resultar pesadas para un desarrollo ágil y rápido.
+    \item \textbf{Python (con Django o FastAPI):} Python es un lenguaje altamente legible y versátil. Django ofrece una solución monolítica con "baterías incluidas" ideal para desarrollos rápidos, mientras que FastAPI destaca por su alto rendimiento y la autogeneración de documentación de APIs basada en estándares como OpenAPI. Sin embargo, esta opción aumenta la complejidad ya que necesita muchas dependencias externas para gestionar la asincronía y la integración con n8n.
+    \item \textbf{Node.js (con Express o NestJS):} Permite ejecutar JavaScript (o TypeScript) del lado del servidor. Su arquitectura orientada a eventos y de entrada/salida asíncrona lo hace extremadamente eficiente para manejar múltiples peticiones concurrentes y llamadas a servicios externos. Se apoya fuertemente en formatos estándar de intercambio de datos de Internet como JSON.
 \end{itemize}
 
 \subsection{Elección tecnológica}
 
-Como parte del objetivo de evaluar distintas tecnologías para implementar la arquitectura de la solución, se ha decidido desarrollar el Backend utilizando el entorno Node.js.
+Como parte del objetivo de evaluar distintas tecnologías para implementar la arquitectura de la solución, se ha decidido desarrollar el Backend utilizando el entorno \textbf{Node.js}.
 
 La elección de esta tecnología se fundamenta en las siguientes razones técnicas y metodológicas:
 
 \begin{itemize}
     \item \textbf{Gestión de asincronía y Webhooks:} Dado que la aplicación delega la ejecución de procesos repetitivos a n8n, el servidor debe manejar eficientemente múltiples llamadas de red de forma asíncrona. Node.js está diseñado inherentemente para este tipo de cargas de trabajo no bloqueantes, garantizando que el sistema se comporte de forma fiable y eficiente.
-    \item \textbf{Sinergia de lenguaje (Full-Stack JavaScript):} Al haber seleccionado un paradigma SPA (Single-Page Application) para el Frontend, el uso de Node.js permite unificar el ecosistema en toda la pila tecnológica. Esto facilita el mantenimiento del código, el intercambio de estructuras de datos mediante JSON , y agiliza la resolución de las necesidades mínimas en cada \textit{sprint} de la metodología ágil adoptada.
+    \item \textbf{Sinergia de lenguaje (Full-Stack JavaScript):} Al haber seleccionado un paradigma SPA (\textit{Single-Page Application}) para el Frontend, el uso de Node.js permite unificar el ecosistema en toda la pila tecnológica. Esto facilita el mantenimiento del código, el intercambio de estructuras de datos mediante JSON, y agiliza la resolución de las necesidades mínimas en cada \textit{sprint} de la metodología ágil adoptada.
     \item \textbf{Integración y escalabilidad:} El extenso ecosistema de paquetes de Node.js permite dar solución a problemas de integración de forma rápida, proporcionando herramientas maduras para la conexión con PostgreSQL, la gestión de autenticación y la comunicación con APIs de terceros.
 \end{itemize}
 \cleardoublepage
